@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Base.swift
 //  Frontend
 //
 //  Created by Julian Schiavo on 15/11/2020.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Base: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Base_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Base()
     }
 }
