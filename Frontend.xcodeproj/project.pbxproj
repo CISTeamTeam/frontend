@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50752D342562ADF60018242B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50752D332562ADF60018242B /* SignInView.swift */; };
 		B9B41D882561324C003BDB2C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B41D872561324C003BDB2C /* App.swift */; };
 		B9B41D8A2561324C003BDB2C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B41D892561324C003BDB2C /* Base.swift */; };
 		B9B41D8C2561324D003BDB2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B41D8B2561324D003BDB2C /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50752D332562ADF60018242B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B9B41D842561324C003BDB2C /* Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B41D872561324C003BDB2C /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		B9B41D892561324C003BDB2C /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
@@ -43,6 +45,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50752D362562AE290018242B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50752D332562ADF60018242B /* SignInView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50752D372562AE360018242B /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Loaders;
+			sourceTree = "<group>";
+		};
 		B9B41D7B2561324C003BDB2C = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +103,8 @@
 		B9B41D97256132F7003BDB2C /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				50752D372562AE360018242B /* Loaders */,
+				50752D362562AE290018242B /* Views */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -239,6 +258,7 @@
 				B9B41DA625613343003BDB2C /* Post-Toolbar.swift in Sources */,
 				B9B41DAD25613371003BDB2C /* NewPost.swift in Sources */,
 				B9B41DA225613338003BDB2C /* Post-Image.swift in Sources */,
+				50752D342562ADF60018242B /* SignInView.swift in Sources */,
 				B9B41D9E25613331003BDB2C /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

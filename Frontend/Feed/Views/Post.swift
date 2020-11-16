@@ -9,7 +9,12 @@ import SwiftUI
 
 struct Post: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack{
+                Image("EmptyAvatar").resizable().aspectRatio(contentMode: .fill).frame(width: 50, height: 50,alignment: .leading).cornerRadius(20).clipped()
+                Text("username").font(.system(size: 25)).fontWeight(.light).multilineTextAlignment(.leading)
+            }
+        }
     }
 }
 
