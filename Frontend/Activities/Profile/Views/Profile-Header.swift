@@ -14,7 +14,16 @@ extension Profile {
         // TODO: Complete profile header with `Picture` and labels for username, name, etc
         // Profile-* Views can be used without saying Profile.*, just use the * name
         var body: some View {
-            Text("Hello, World!")
+            VStack{
+                HStack{
+                    Profile.Picture(user: user).frame(width: 75, height: 75).padding(.leading)
+                    VStack(alignment: .leading){
+                        Text("Dispname").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).multilineTextAlignment(.leading).padding(.leading,5)
+                        Text("username").font(.caption).fontWeight(.light).multilineTextAlignment(.leading).padding(.leading,5)
+                    }.alignedHorizontally(to: .leading)
+                }
+                Text("bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio").font(.caption).padding(.horizontal).padding(.top,5)
+            }
         }
     }
 }
