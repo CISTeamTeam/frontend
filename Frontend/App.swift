@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct App: SwiftUI.App {
+    init() {
+    }
+    
     var body: some Scene {
         WindowGroup {
             Base()

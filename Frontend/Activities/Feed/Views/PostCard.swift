@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Post: View {
+struct PostCard: View {
     var body: some View {
         VStack {
             Label("username", systemImage: "person.circle.fill")
@@ -33,8 +33,8 @@ struct Post: View {
     }
 }
 
-struct Post_Previews: PreviewProvider {
+struct PostCard_Previews: PreviewProvider {
     static var previews: some View {
-        Post()
+        PostCard()
     }
 }
