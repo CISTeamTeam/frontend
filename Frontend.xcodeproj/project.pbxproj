@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0522646629A7192D3B033B07 /* Pods_Frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17EC0CBDBD823B0F4AB430 /* Pods_Frontend.framework */; };
 		50752D342562ADF60018242B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50752D332562ADF60018242B /* SignInView.swift */; };
 		B90DE09C2563EC3B00A67055 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE09B2563EC3B00A67055 /* Post.swift */; };
 		B90DE0A02563ECC000A67055 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE09F2563ECC000A67055 /* User.swift */; };
 		B90DE0A72563EF9500A67055 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE0A62563EF9500A67055 /* Comment.swift */; };
-		B90DE0AB2563F0E300A67055 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B90DE0AA2563F0E300A67055 /* SDWebImageSwiftUI */; };
+		B90DE0AB2563F0E300A67055 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = B90DE0AA2563F0E300A67055 /* SwiftPackageProductDependency */; };
 		B98A791E2562BD6D000FFAAD /* Modifier-Aligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A791D2562BD6D000FFAAD /* Modifier-Aligned.swift */; };
 		B98FC69525651B13004C8A2C /* CommentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC69425651B13004C8A2C /* CommentList.swift */; };
 		B98FC69925651BB3004C8A2C /* CommentListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC69825651BB3004C8A2C /* CommentListPreview.swift */; };
@@ -72,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		50752D332562ADF60018242B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.debug.xcconfig"; path = "Target Support Files/Pods-Frontend/Pods-Frontend.debug.xcconfig"; sourceTree = "<group>"; };
+		B89498420F5FAB6216F6A10C /* Pods-Frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.release.xcconfig"; path = "Target Support Files/Pods-Frontend/Pods-Frontend.release.xcconfig"; sourceTree = "<group>"; };
 		B90DE09B2563EC3B00A67055 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B90DE09F2563ECC000A67055 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B90DE0A62563EF9500A67055 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 		B9B41D9D25613331003BDB2C /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		B9B41DA125613338003BDB2C /* PostImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImage.swift; sourceTree = "<group>"; };
 		B9B41DAC25613371003BDB2C /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
+		FA17EC0CBDBD823B0F4AB430 /* Pods_Frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,13 +145,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B90DE0AB2563F0E300A67055 /* SDWebImageSwiftUI in Frameworks */,
+				B90DE0AB2563F0E300A67055 /* BuildFile in Frameworks */,
+				0522646629A7192D3B033B07 /* Pods_Frontend.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AF66B502605C8A332CC39A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA17EC0CBDBD823B0F4AB430 /* Pods_Frontend.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EE82C18983D6FC35A4CD2AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */,
+				B89498420F5FAB6216F6A10C /* Pods-Frontend.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		50752D362562AE290018242B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +352,8 @@
 			children = (
 				B9B41D862561324C003BDB2C /* Frontend */,
 				B9B41D852561324C003BDB2C /* Products */,
+				2EE82C18983D6FC35A4CD2AD /* Pods */,
+				0AF66B502605C8A332CC39A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -464,9 +489,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B41D932561324D003BDB2C /* Build configuration list for PBXNativeTarget "Frontend" */;
 			buildPhases = (
+				BE1B99A8BEB099113D9B6B0E /* [CP] Check Pods Manifest.lock */,
 				B9B41D802561324C003BDB2C /* Sources */,
 				B9B41D812561324C003BDB2C /* Frameworks */,
 				B9B41D822561324C003BDB2C /* Resources */,
+				5F1438B06D81E03046B55306 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -474,7 +501,7 @@
 			);
 			name = Frontend;
 			packageProductDependencies = (
-				B90DE0AA2563F0E300A67055 /* SDWebImageSwiftUI */,
+				B90DE0AA2563F0E300A67055 /* SwiftPackageProductDependency */,
 			);
 			productName = Frontend;
 			productReference = B9B41D842561324C003BDB2C /* Frontend.app */;
@@ -504,7 +531,7 @@
 			);
 			mainGroup = B9B41D7B2561324C003BDB2C;
 			packageReferences = (
-				B90DE0A92563F0E300A67055 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				B90DE0A92563F0E300A67055 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = B9B41D852561324C003BDB2C /* Products */;
 			projectDirPath = "";
@@ -526,6 +553,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F1438B06D81E03046B55306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1B99A8BEB099113D9B6B0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Frontend-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9B41D802561324C003BDB2C /* Sources */ = {
@@ -714,6 +783,7 @@
 		};
 		B9B41D942561324D003BDB2C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -739,6 +809,7 @@
 		};
 		B9B41D952561324D003BDB2C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B89498420F5FAB6216F6A10C /* Pods-Frontend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -786,7 +857,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B90DE0A92563F0E300A67055 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		B90DE0A92563F0E300A67055 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -797,9 +868,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B90DE0AA2563F0E300A67055 /* SDWebImageSwiftUI */ = {
+		B90DE0AA2563F0E300A67055 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B90DE0A92563F0E300A67055 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = B90DE0A92563F0E300A67055 /* RemoteSwiftPackageReference */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
