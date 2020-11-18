@@ -16,15 +16,12 @@ struct PostThumbnail: View, Loadable {
     var key: UUID { postID }
     
     func body(with post: Post) -> some View {
-        WebImage(url: post.url)
-            .resizable()
-            .indicator(.activity)
-            .aspectRatio(contentMode: .fit)
+        PostImage(post: post)
     }
 }
 
 struct PostThumbnail_Previews: PreviewProvider {
     static var previews: some View {
-        PostThumbnail(postID: Constants.placeholder)
+        PostThumbnail(postID: Placeholders.aPost.id)
     }
 }

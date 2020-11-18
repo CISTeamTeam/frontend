@@ -9,22 +9,29 @@ import SwiftUI
 
 struct Feed: View {
     
-    let postIDs: [UUID]
+    var postIDs: [UUID]?
+    
+    @ObservedObject private var controller = FeedController.shared
     
     var body: some View {
-        ScrollView {
-            ForEach(postIDs, id: \.self) { postID in
-                PostCard(postID: postID)
-                Divider()
-                
+        NavigationView {
+            ScrollView {
+                LazyVStack {
+                    ForEach(postIDs ?? controller.postIDs, id: \.self) { postID in
+                        PostView(postID: postID)
+                        Divider()
+                    }
+                }
             }
+            .navigationTitle("Canopy")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
     
 
 struct Feed_Previews: PreviewProvider {
     static var previews: some View {
-        Feed(postIDs: Post.placeholders.map(\.id))
+        Feed(postIDs: Placeholders.posts.map(\.id))
     }
 }

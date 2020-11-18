@@ -9,8 +9,12 @@ import SwiftUI
 
 struct Base: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            Feed(postIDs: Placeholders.posts.map(\.id))
+                .tabItem {
+                    Label("For You", systemImage: "flowchart")
+                }
+        }
     }
 }
 

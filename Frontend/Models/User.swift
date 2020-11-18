@@ -7,20 +7,14 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Hashable, Identifiable {
     let id: UUID
     
-    let username: String
-    let name: String
-    let bio: String
+    var username: String
+    var name: String
+    var bio: String
     
-    let profilePictureURL: URL
+    var profilePictureURL: URL
     
-    var followers = [UUID]()
-    var following = [UUID]()
-    var posts = [UUID]()
-    
-    static var placeholder: User {
-        User(id: Constants.placeholder, username: "@user", name: "User Name", bio: "Some biography all about me", profilePictureURL: URL(string: "https://i.imgur.com/0loCM3K.jpg")!, posts: Constants.placeholders)
-    }
+    var posts: [UUID]
 }

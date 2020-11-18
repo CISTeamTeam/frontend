@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct Comment: Codable {
+struct Comment: Codable, Hashable, Identifiable {
     let id: UUID
     let authorID: UUID
     let postID: UUID
     
-    let text: String
+    var text: String
     
-    static var placeholder: Comment {
-        Comment(id: UUID(), authorID: UUID(), postID: UUID(), text: "A really cool comment")
-    }
+    var creationDate = Date()
 }
