@@ -21,6 +21,6 @@ struct User: Codable {
     var posts = [UUID]()
     
     static var placeholder: User {
-        User(id: UUID(), username: "@user", name: "User Name", bio: "Some biography all about me", profilePictureURL: URL(string: "https://i.imgur.com/0loCM3K.jpg")!, posts: Constants.placeholders)
+        User(id: Constants.placeholder, username: "@user", name: "User Name", bio: "Some biography all about me", profilePictureURL: URL(string: "https://i.imgur.com/0loCM3K.jpg")!, posts: Constants.placeholders)
     }
 }

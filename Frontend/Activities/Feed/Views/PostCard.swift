@@ -6,16 +6,16 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PostCard: View {
+    let post: Post
+    
     var body: some View {
         VStack {
-            Label("username", systemImage: "person.circle.fill")
-                .font(.title2).padding().alignedHorizontally(to: .leading)
-            //TODO: add an image from imgur
-            Image(systemName:"eye.slash").resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 250.0, height: 250.0, alignment: .center)
+            UserLabel(userID: post.authorID)
+            WebImage(url:post.url).resizable()
+                .aspectRatio(contentMode: .fit)
                 .border(Color.blue, width: 3.0)
             
             HStack{
@@ -25,9 +25,8 @@ struct PostCard: View {
                 Button(action:{}){
                     Image(systemName: "bubble.left").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).padding(5)
                 }
-                Text("Caption").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.light)
             }.alignedHorizontally(to: .leading).padding(5)
-            Text("Description").alignedHorizontally(to: .leading).padding(10)
+            Text(post.description).alignedHorizontally(to: .leading).padding(10)
 
         }
     }
@@ -35,6 +34,6 @@ struct PostCard: View {
 
 struct PostCard_Previews: PreviewProvider {
     static var previews: some View {
-        PostCard()
+        PostCard(post: .placeholder)
     }
 }

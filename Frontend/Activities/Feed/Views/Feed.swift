@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct Feed: View {
-    
+    let postIDs: [UUID]
     
     var body: some View {
-        List {
-            
+        ScrollView(.vertical){
+            Text("x")
         }
-        
     }
 }
 
 struct Feed_Previews: PreviewProvider {
     static var previews: some View {
-        Feed()
+        Feed(postIDs: Post.placeholders.map(\.id))
     }
 }

@@ -15,15 +15,15 @@ struct Post: Codable, Hashable, Identifiable {
     var creationDate = Date()
     
     static var placeholder: Post {
-        Post(id: UUID(), authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!)
+        Post(id: Constants.placeholder, authorID: Constants.placeholder, description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!)
     }
     
     static var placeholders: Set<Post> {
         [
-            Post(id: Constants.placeholders[0], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
-            Post(id: Constants.placeholders[1], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
-            Post(id: Constants.placeholders[2], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
-            Post(id: Constants.placeholders[3], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!)
+            Post(id: Constants.placeholders[0], authorID: Constants.placeholder, description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
+            Post(id: Constants.placeholders[1], authorID: Constants.placeholder, description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
+            Post(id: Constants.placeholders[2], authorID: Constants.placeholder, description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
+            Post(id: Constants.placeholders[3], authorID: Constants.placeholder, description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!)
         ]
     }
 }
