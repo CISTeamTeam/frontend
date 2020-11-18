@@ -14,6 +14,10 @@ struct Base: View {
                 .tabItem {
                     Label("For You", systemImage: "flowchart")
                 }
+            SignInView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
         }
     }
 }

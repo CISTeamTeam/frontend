@@ -1,18 +1,28 @@
 PODS:
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
+  - SDWebImageSwiftUI (1.5.0):
+    - SDWebImage (~> 5.7)
   - SnapSDK/SCSDKCreativeKit (1.6.8)
   - SnapSDK/SCSDKLoginKit (1.6.8)
 
 DEPENDENCIES:
+  - SDWebImageSwiftUI
   - SnapSDK/SCSDKCreativeKit
   - SnapSDK/SCSDKLoginKit
 
 SPEC REPOS:
   trunk:
+    - SDWebImage
+    - SDWebImageSwiftUI
     - SnapSDK
 
 SPEC CHECKSUMS:
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
   SnapSDK: 29513fd65172495391394a0999a0388dd136078a
 
-PODFILE CHECKSUM: 05512f0e9a7384e42a060bd3ff544d8e0b919370
+PODFILE CHECKSUM: 76b947fbc2a8d52fbf4cf9e4729fd94ef40ea9bc
 
 COCOAPODS: 1.10.0

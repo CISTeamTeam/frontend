@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		B90DE09C2563EC3B00A67055 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE09B2563EC3B00A67055 /* Post.swift */; };
 		B90DE0A02563ECC000A67055 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE09F2563ECC000A67055 /* User.swift */; };
 		B90DE0A72563EF9500A67055 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE0A62563EF9500A67055 /* Comment.swift */; };
-		B90DE0AB2563F0E300A67055 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = B90DE0AA2563F0E300A67055 /* SwiftPackageProductDependency */; };
 		B98A791E2562BD6D000FFAAD /* Modifier-Aligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A791D2562BD6D000FFAAD /* Modifier-Aligned.swift */; };
 		B98FC69525651B13004C8A2C /* CommentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC69425651B13004C8A2C /* CommentList.swift */; };
 		B98FC69925651BB3004C8A2C /* CommentListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC69825651BB3004C8A2C /* CommentListPreview.swift */; };
@@ -40,6 +39,9 @@
 		B98FC6FF25654C52004C8A2C /* DiscountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC6FE25654C52004C8A2C /* DiscountView.swift */; };
 		B98FC70325654CC5004C8A2C /* DiscountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC70225654CC5004C8A2C /* DiscountScreen.swift */; };
 		B98FC70625654D1E004C8A2C /* DiscountGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC70525654D1E004C8A2C /* DiscountGrid.swift */; };
+		B98FC70C256551C3004C8A2C /* LogInWithSnapchatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC70B256551C3004C8A2C /* LogInWithSnapchatButton.swift */; };
+		B98FC70F2565526D004C8A2C /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC70E2565526D004C8A2C /* AuthController.swift */; };
+		B98FC7122565565B004C8A2C /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC7112565565B004C8A2C /* CloseButton.swift */; };
 		B9AA28FE2563F1F5002601BA /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA28FD2563F1F5002601BA /* Loader.swift */; };
 		B9AA29012563F214002601BA /* ThrowsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29002563F214002601BA /* ThrowsErrors.swift */; };
 		B9AA29042563F230002601BA /* IdentifiableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29032563F230002601BA /* IdentifiableError.swift */; };
@@ -106,6 +108,9 @@
 		B98FC6FE25654C52004C8A2C /* DiscountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountView.swift; sourceTree = "<group>"; };
 		B98FC70225654CC5004C8A2C /* DiscountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountScreen.swift; sourceTree = "<group>"; };
 		B98FC70525654D1E004C8A2C /* DiscountGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountGrid.swift; sourceTree = "<group>"; };
+		B98FC70B256551C3004C8A2C /* LogInWithSnapchatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInWithSnapchatButton.swift; sourceTree = "<group>"; };
+		B98FC70E2565526D004C8A2C /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		B98FC7112565565B004C8A2C /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		B9AA28FD2563F1F5002601BA /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		B9AA29002563F214002601BA /* ThrowsErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowsErrors.swift; sourceTree = "<group>"; };
 		B9AA29032563F230002601BA /* IdentifiableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableError.swift; sourceTree = "<group>"; };
@@ -145,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B90DE0AB2563F0E300A67055 /* BuildFile in Frameworks */,
 				0522646629A7192D3B033B07 /* Pods_Frontend.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +171,6 @@
 				87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */,
 				B89498420F5FAB6216F6A10C /* Pods-Frontend.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				50752D332562ADF60018242B /* SignInView.swift */,
+				B98FC70B256551C3004C8A2C /* LogInWithSnapchatButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +202,7 @@
 				B98A791D2562BD6D000FFAAD /* Modifier-Aligned.swift */,
 				B98FC6C625653DB6004C8A2C /* Padding-Default.swift */,
 				B98FC6D325653F88004C8A2C /* PaddedView.swift */,
+				B98FC7112565565B004C8A2C /* CloseButton.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 		B98FC6A525651E95004C8A2C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B98FC70E2565526D004C8A2C /* AuthController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -501,7 +507,6 @@
 			);
 			name = Frontend;
 			packageProductDependencies = (
-				B90DE0AA2563F0E300A67055 /* SwiftPackageProductDependency */,
 			);
 			productName = Frontend;
 			productReference = B9B41D842561324C003BDB2C /* Frontend.app */;
@@ -531,7 +536,6 @@
 			);
 			mainGroup = B9B41D7B2561324C003BDB2C;
 			packageReferences = (
-				B90DE0A92563F0E300A67055 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = B9B41D852561324C003BDB2C /* Products */;
 			projectDirPath = "";
@@ -602,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9AA29212563FEB1002601BA /* PostThumbnail.swift in Sources */,
+				B98FC70C256551C3004C8A2C /* LogInWithSnapchatButton.swift in Sources */,
 				B9AA29152563F9D8002601BA /* FetchRequest.swift in Sources */,
 				B98FC6B425652227004C8A2C /* FeedPage.swift in Sources */,
 				B9B41D8A2561324C003BDB2C /* Base.swift in Sources */,
@@ -629,6 +634,7 @@
 				B9AA292D256509C6002601BA /* Placeholders.swift in Sources */,
 				B9AA29182563FAD6002601BA /* Profile.swift in Sources */,
 				B9B41DAD25613371003BDB2C /* NewPost.swift in Sources */,
+				B98FC7122565565B004C8A2C /* CloseButton.swift in Sources */,
 				B98FC70625654D1E004C8A2C /* DiscountGrid.swift in Sources */,
 				B98FC69525651B13004C8A2C /* CommentList.swift in Sources */,
 				B9AA2948256515E0002601BA /* UserUsernameLabel.swift in Sources */,
@@ -637,6 +643,7 @@
 				B98FC69C25651D48004C8A2C /* ProfileUsername.swift in Sources */,
 				B9AA290C2563F695002601BA /* Loadable.swift in Sources */,
 				B9B41DA225613338003BDB2C /* PostImage.swift in Sources */,
+				B98FC70F2565526D004C8A2C /* AuthController.swift in Sources */,
 				B98FC69925651BB3004C8A2C /* CommentListPreview.swift in Sources */,
 				B98FC70325654CC5004C8A2C /* DiscountScreen.swift in Sources */,
 				B90DE0A72563EF9500A67055 /* Comment.swift in Sources */,
@@ -785,6 +792,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Frontend/Frontend.entitlements;
@@ -792,6 +800,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Frontend/Preview Content\"";
 				DEVELOPMENT_TEAM = 74N8K5J2N7;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = Frontend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
@@ -799,11 +808,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.ms.Frontend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
+				VALID_ARCHS = "armv7 armv7s arm64 arm64e x86_64";
 			};
 			name = Debug;
 		};
@@ -830,6 +841,7 @@
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,6";
+				VALID_ARCHS = "armv7 armv7s arm64 arm64e x86_64";
 			};
 			name = Release;
 		};
@@ -855,25 +867,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B90DE0A92563F0E300A67055 /* RemoteSwiftPackageReference */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B90DE0AA2563F0E300A67055 /* SwiftPackageProductDependency */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B90DE0A92563F0E300A67055 /* RemoteSwiftPackageReference */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9B41D7C2561324C003BDB2C /* Project object */;
 }

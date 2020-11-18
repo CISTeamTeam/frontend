@@ -6,6 +6,7 @@ target 'Frontend' do
   use_frameworks!
 
   # Pods for Frontend
+  pod 'SDWebImageSwiftUI'
   pod 'SnapSDK', :subspecs => ['SCSDKLoginKit', 'SCSDKCreativeKit']
 
 end
