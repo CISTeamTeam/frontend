@@ -16,8 +16,8 @@ extension Profile {
             WebImage(url: user.profilePictureURL)
                 .resizable()
                 .indicator(.activity)
-                .frame(width: 0, height: 0)
                 .clipShape(Circle())
+                .aspectRatio(contentMode:.fit)
                 .overlay(
                     Circle().stroke(Color.gray, lineWidth: 3)
                 )

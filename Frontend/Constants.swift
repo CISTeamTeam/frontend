@@ -16,4 +16,5 @@ enum Constants {
     static let postMethod = "POST"
     
     static let placeholder = UUID()
+    static let placeholders = [UUID(), UUID(), UUID(), UUID()]
 }

@@ -33,7 +33,7 @@ class PostLoader: Loader {
     /// Loads data for a key. Do not call this method directly.
     /// - Parameter key: The key identifying the object
     func loadData(key: UUID) {
-        if key == Constants.placeholder {
+        if key == Constants.placeholder || Constants.placeholders.contains(key) {
             object = Post.placeholder
             return
         }

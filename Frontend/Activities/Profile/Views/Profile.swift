@@ -18,7 +18,11 @@ struct Profile: View, Loadable {
     // Profile-* Views can be used without saying Profile.*, just use the * name
     // For example, Header(user: user)
     func body(with user: User) -> some View {
-        Text("Hello, World!")
+        VStack{
+            Header(user: user)
+            Spacer(minLength: 20)
+            Posts(user: user)
+        }
     }
 }
 

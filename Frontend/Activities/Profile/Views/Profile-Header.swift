@@ -16,13 +16,25 @@ extension Profile {
         var body: some View {
             VStack{
                 HStack{
-                    Profile.Picture(user: user).frame(width: 75, height: 75).padding(.leading)
+                    Profile.Picture(user: user)
+                        .frame(width: 100, height: 100)
+                        .padding(.leading)
                     VStack(alignment: .leading){
-                        Text("Dispname").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).multilineTextAlignment(.leading).padding(.leading,5)
-                        Text("username").font(.caption).fontWeight(.light).multilineTextAlignment(.leading).padding(.leading,5)
+                        Text(user.name)
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .multilineTextAlignment(.leading)
+                            .padding(.leading,5)
+                        Text(user.username)
+                            .font(.caption)
+                            .fontWeight(.light)
+                            .multilineTextAlignment(.leading)
+                            .padding(.leading,5)
                     }.alignedHorizontally(to: .leading)
                 }
-                Text("bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio bio").font(.caption).padding(.horizontal).padding(.top,5)
+                Text(user.bio)
+                    .font(.caption)
+                    .padding(.horizontal)
+                    .alignedHorizontally(to: .leading)
             }
         }
     }

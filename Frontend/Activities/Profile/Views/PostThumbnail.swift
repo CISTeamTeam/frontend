@@ -19,7 +19,8 @@ struct PostThumbnail: View, Loadable {
         WebImage(url: post.url)
             .resizable()
             .indicator(.activity)
-            .cornerRadius(5)
+            .aspectRatio(contentMode: .fit)
+            
     }
 }
 

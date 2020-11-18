@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post: Codable {
+struct Post: Codable, Hashable, Identifiable {
     let id: UUID
     let authorID: UUID
     let description: String
@@ -16,5 +16,14 @@ struct Post: Codable {
     
     static var placeholder: Post {
         Post(id: UUID(), authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!)
+    }
+    
+    static var placeholders: Set<Post> {
+        [
+            Post(id: Constants.placeholders[0], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
+            Post(id: Constants.placeholders[1], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
+            Post(id: Constants.placeholders[2], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!),
+            Post(id: Constants.placeholders[3], authorID: UUID(), description: "An example post", url: URL(string: "https://i.imgur.com/0loCM3K.jpg")!)
+        ]
     }
 }
