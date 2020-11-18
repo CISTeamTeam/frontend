@@ -1,6 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh
-${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
-${BUILT_PRODUCTS_DIR}/SDWebImageSwiftUI/SDWebImageSwiftUI.framework
-${PODS_ROOT}/SnapSDK/SCSDKCreativeKit.framework
-${PODS_ROOT}/SnapSDK/SCSDKCoreKit.framework
-${PODS_ROOT}/SnapSDK/SCSDKLoginKit.framework

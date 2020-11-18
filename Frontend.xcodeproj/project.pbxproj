@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0522646629A7192D3B033B07 /* Pods_Frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA17EC0CBDBD823B0F4AB430 /* Pods_Frontend.framework */; };
 		50752D342562ADF60018242B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50752D332562ADF60018242B /* SignInView.swift */; };
 		B90DE09C2563EC3B00A67055 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE09B2563EC3B00A67055 /* Post.swift */; };
 		B90DE0A02563ECC000A67055 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90DE09F2563ECC000A67055 /* User.swift */; };
@@ -42,6 +41,10 @@
 		B98FC70C256551C3004C8A2C /* LogInWithSnapchatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC70B256551C3004C8A2C /* LogInWithSnapchatButton.swift */; };
 		B98FC70F2565526D004C8A2C /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC70E2565526D004C8A2C /* AuthController.swift */; };
 		B98FC7122565565B004C8A2C /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC7112565565B004C8A2C /* CloseButton.swift */; };
+		B98FC73A25656DA5004C8A2C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B98FC73925656DA5004C8A2C /* SDWebImageSwiftUI */; };
+		B98FC73F25656DDA004C8A2C /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */; };
+		B98FC74025656DDA004C8A2C /* SCSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */; };
+		B98FC74125656DDA004C8A2C /* SCSDKCreativeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */; };
 		B9AA28FE2563F1F5002601BA /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA28FD2563F1F5002601BA /* Loader.swift */; };
 		B9AA29012563F214002601BA /* ThrowsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29002563F214002601BA /* ThrowsErrors.swift */; };
 		B9AA29042563F230002601BA /* IdentifiableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29032563F230002601BA /* IdentifiableError.swift */; };
@@ -73,10 +76,21 @@
 		B9B41DAD25613371003BDB2C /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B41DAC25613371003BDB2C /* NewPost.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B98FC73525656D8C004C8A2C /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		50752D332562ADF60018242B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.debug.xcconfig"; path = "Target Support Files/Pods-Frontend/Pods-Frontend.debug.xcconfig"; sourceTree = "<group>"; };
-		B89498420F5FAB6216F6A10C /* Pods-Frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.release.xcconfig"; path = "Target Support Files/Pods-Frontend/Pods-Frontend.release.xcconfig"; sourceTree = "<group>"; };
 		B90DE09B2563EC3B00A67055 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B90DE09F2563ECC000A67055 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B90DE0A62563EF9500A67055 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -111,6 +125,9 @@
 		B98FC70B256551C3004C8A2C /* LogInWithSnapchatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInWithSnapchatButton.swift; sourceTree = "<group>"; };
 		B98FC70E2565526D004C8A2C /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		B98FC7112565565B004C8A2C /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKLoginKit.framework; sourceTree = "<group>"; };
+		B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKCoreKit.framework; sourceTree = "<group>"; };
+		B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKCreativeKit.framework; sourceTree = "<group>"; };
 		B9AA28FD2563F1F5002601BA /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		B9AA29002563F214002601BA /* ThrowsErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowsErrors.swift; sourceTree = "<group>"; };
 		B9AA29032563F230002601BA /* IdentifiableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableError.swift; sourceTree = "<group>"; };
@@ -142,7 +159,6 @@
 		B9B41D9D25613331003BDB2C /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		B9B41DA125613338003BDB2C /* PostImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImage.swift; sourceTree = "<group>"; };
 		B9B41DAC25613371003BDB2C /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
-		FA17EC0CBDBD823B0F4AB430 /* Pods_Frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,26 +166,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0522646629A7192D3B033B07 /* Pods_Frontend.framework in Frameworks */,
+				B98FC73F25656DDA004C8A2C /* SCSDKLoginKit.framework in Frameworks */,
+				B98FC74125656DDA004C8A2C /* SCSDKCreativeKit.framework in Frameworks */,
+				B98FC73A25656DA5004C8A2C /* SDWebImageSwiftUI in Frameworks */,
+				B98FC74025656DDA004C8A2C /* SCSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AF66B502605C8A332CC39A4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FA17EC0CBDBD823B0F4AB430 /* Pods_Frontend.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2EE82C18983D6FC35A4CD2AD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */,
-				B89498420F5FAB6216F6A10C /* Pods-Frontend.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -257,6 +266,16 @@
 				B98FC70225654CC5004C8A2C /* DiscountScreen.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B98FC73B25656DD0004C8A2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */,
+				B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */,
+				B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		B9AA28FB2563F17A002601BA /* Networking */ = {
@@ -359,7 +378,6 @@
 				B9B41D862561324C003BDB2C /* Frontend */,
 				B9B41D852561324C003BDB2C /* Products */,
 				2EE82C18983D6FC35A4CD2AD /* Pods */,
-				0AF66B502605C8A332CC39A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -383,6 +401,7 @@
 				B90DE09A2563EBFC00A67055 /* Models */,
 				B9AA28FB2563F17A002601BA /* Networking */,
 				B98A791C2562BD4C000FFAAD /* Reusable */,
+				B98FC73B25656DD0004C8A2C /* Frameworks */,
 				B9B41D8B2561324D003BDB2C /* Assets.xcassets */,
 				B9B41D902561324D003BDB2C /* Info.plist */,
 				B9B41D8D2561324D003BDB2C /* Preview Content */,
@@ -495,11 +514,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B41D932561324D003BDB2C /* Build configuration list for PBXNativeTarget "Frontend" */;
 			buildPhases = (
-				BE1B99A8BEB099113D9B6B0E /* [CP] Check Pods Manifest.lock */,
 				B9B41D802561324C003BDB2C /* Sources */,
 				B9B41D812561324C003BDB2C /* Frameworks */,
 				B9B41D822561324C003BDB2C /* Resources */,
-				5F1438B06D81E03046B55306 /* [CP] Embed Pods Frameworks */,
+				B98FC73525656D8C004C8A2C /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -507,6 +525,7 @@
 			);
 			name = Frontend;
 			packageProductDependencies = (
+				B98FC73925656DA5004C8A2C /* SDWebImageSwiftUI */,
 			);
 			productName = Frontend;
 			productReference = B9B41D842561324C003BDB2C /* Frontend.app */;
@@ -536,6 +555,7 @@
 			);
 			mainGroup = B9B41D7B2561324C003BDB2C;
 			packageReferences = (
+				B98FC73825656DA5004C8A2C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = B9B41D852561324C003BDB2C /* Products */;
 			projectDirPath = "";
@@ -557,48 +577,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5F1438B06D81E03046B55306 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BE1B99A8BEB099113D9B6B0E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Frontend-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9B41D802561324C003BDB2C /* Sources */ = {
@@ -790,7 +768,6 @@
 		};
 		B9B41D942561324D003BDB2C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87B2EAF82C73C9E24FD18149 /* Pods-Frontend.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -801,12 +778,20 @@
 				DEVELOPMENT_TEAM = 74N8K5J2N7;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frontend/Frameworks",
+				);
 				INFOPLIST_FILE = Frontend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frontend/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.ms.Frontend;
@@ -820,7 +805,6 @@
 		};
 		B9B41D952561324D003BDB2C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B89498420F5FAB6216F6A10C /* Pods-Frontend.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -829,12 +813,20 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Frontend/Preview Content\"";
 				DEVELOPMENT_TEAM = 74N8K5J2N7;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frontend/Frameworks",
+				);
 				INFOPLIST_FILE = Frontend/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frontend/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.ms.Frontend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -867,6 +859,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B98FC73825656DA5004C8A2C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B98FC73925656DA5004C8A2C /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B98FC73825656DA5004C8A2C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B9B41D7C2561324C003BDB2C /* Project object */;
 }
