@@ -20,7 +20,6 @@ struct PostThumbnail: View, Loadable {
             .resizable()
             .indicator(.activity)
             .aspectRatio(contentMode: .fit)
-            
     }
 }
 

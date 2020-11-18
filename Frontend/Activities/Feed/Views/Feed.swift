@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct Feed: View {
+    
     let postIDs: [UUID]
     
     var body: some View {
-        ScrollView(.vertical){
-            Text("x")
+        ScrollView {
+            ForEach(postIDs, id: \.self) { postID in
+                PostCard(postID: postID)
+                Divider()
+                
+            }
         }
     }
 }
+    
 
 struct Feed_Previews: PreviewProvider {
     static var previews: some View {

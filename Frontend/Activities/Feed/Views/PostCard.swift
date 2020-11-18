@@ -8,10 +8,14 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct PostCard: View {
-    let post: Post
+struct PostCard: View, Loadable {
+    @StateObject var loader = PostLoader()
     
-    var body: some View {
+    let postID: UUID
+    
+    var key: UUID { postID }
+    
+    func body(with post: Post) -> some View {
         VStack {
             UserLabel(userID: post.authorID)
             WebImage(url:post.url).resizable()
@@ -34,6 +38,6 @@ struct PostCard: View {
 
 struct PostCard_Previews: PreviewProvider {
     static var previews: some View {
-        PostCard(post: .placeholder)
+        PostCard(postID: Constants.placeholder)
     }
 }
