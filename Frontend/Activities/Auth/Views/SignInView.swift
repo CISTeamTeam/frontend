@@ -23,7 +23,7 @@ struct SignInView: View {
         }
         .padding(15)
 //            .alert(errorBinding: $authenticationManager.error)
-        .fullScreenCover(isPresented: $authController.isAuthenticating) {
+        .fullScreenCover(isPresented: $authController.isLoading) {
             ZStack {
                 Color.black.opacity(0.8)
                 ProgressView()

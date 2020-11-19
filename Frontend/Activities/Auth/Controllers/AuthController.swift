@@ -6,21 +6,67 @@
 //
 
 import AuthenticationServices
+import Combine
 import SCSDKLoginKit
 import SwiftUI
 import UIKit
 
 class AuthController: ObservableObject, ThrowsErrors {
     
-    @Published var isAuthenticating = false
+    enum Status {
+        case ready
+        case authenticating
+        case signingUp
+    }
+    
+    @Published var status = Status.ready
+    @Published var isLoading = false
     @Published var error: IdentifiableError?
     
-    private func setIsAuthenticating(_ isAuthenticating: Bool) {
+    private var cancellables = Set<AnyCancellable>()
+    
+    private func setStatus(_ status: Status) {
         DispatchQueue.main.async {
             withAnimation {
-                self.isAuthenticating = isAuthenticating
+                self.status = status
+                self.isLoading = status == .authenticating
             }
         }
+    }
+    
+    // MARK: - Server Auth
+    
+    private func authenticate(_ id: UUID) {
+        let request = createAuthRequest(id: id)
+        URLSession.shared
+            .dataTaskPublisher(for: request)
+            .retry(1)
+            .map {
+                $0.data
+            }
+            .decode(type: StatusResponse.self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                self?.catchCompletionError(completion)
+            } receiveValue: { status in
+                return
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func createAuthRequest(id: UUID) -> URLRequest {
+        let endpoint = "authenticate"
+        let url = Constants.baseURL.appendingPathComponent(endpoint)
+        
+        let authRequest = AuthRequest(id: id)
+        
+        var request = URLRequest(url: url)
+        request.httpBody = authRequest.encoded()
+        
+        request.httpMethod = Constants.postMethod
+        request.addValue(Constants.contentTypeJSON, forHTTPHeaderField: Constants.contentTypeHeader)
+        
+        return request
     }
     
     // MARK: - Snapchat
@@ -29,7 +75,7 @@ class AuthController: ObservableObject, ThrowsErrors {
     private let variables = ["page": "bitmoji"]
     
     func startWithSnapchat() {
-        setIsAuthenticating(true)
+        setStatus(.authenticating)
         
         SCSDKLoginClient.login(from: presentingViewController) { wasSuccessful, error in
             guard wasSuccessful, error == nil else {
@@ -67,7 +113,7 @@ class AuthController: ObservableObject, ThrowsErrors {
     private func snapchatFailureHandler(error: Error?, isUserLoggedOut: Bool) {
         DispatchQueue.main.async {
             self.catchError(error)
-            self.setIsAuthenticating(false)
+            self.setStatus(.ready)
         }
     }
     

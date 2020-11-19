@@ -42,9 +42,13 @@
 		B98FC70F2565526D004C8A2C /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC70E2565526D004C8A2C /* AuthController.swift */; };
 		B98FC7122565565B004C8A2C /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98FC7112565565B004C8A2C /* CloseButton.swift */; };
 		B98FC73A25656DA5004C8A2C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B98FC73925656DA5004C8A2C /* SDWebImageSwiftUI */; };
-		B98FC73F25656DDA004C8A2C /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */; };
-		B98FC74025656DDA004C8A2C /* SCSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */; };
-		B98FC74125656DDA004C8A2C /* SCSDKCreativeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */; };
+		B994522C25668803002601B2 /* SCSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */; };
+		B994522D25668803002601B2 /* SCSDKCoreKit.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B994522E25668804002601B2 /* SCSDKCreativeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */; };
+		B994522F25668804002601B2 /* SCSDKCreativeKit.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B994523025668805002601B2 /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */; };
+		B994523125668805002601B2 /* SCSDKLoginKit.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B994523325668A62002601B2 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994523225668A62002601B2 /* AuthRequest.swift */; };
 		B9AA28FE2563F1F5002601BA /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA28FD2563F1F5002601BA /* Loader.swift */; };
 		B9AA29012563F214002601BA /* ThrowsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29002563F214002601BA /* ThrowsErrors.swift */; };
 		B9AA29042563F230002601BA /* IdentifiableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29032563F230002601BA /* IdentifiableError.swift */; };
@@ -83,6 +87,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B994523125668805002601B2 /* SCSDKLoginKit.framework in Embed Libraries */,
+				B994522D25668803002601B2 /* SCSDKCoreKit.framework in Embed Libraries */,
+				B994522F25668804002601B2 /* SCSDKCreativeKit.framework in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +135,7 @@
 		B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKLoginKit.framework; sourceTree = "<group>"; };
 		B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKCoreKit.framework; sourceTree = "<group>"; };
 		B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKCreativeKit.framework; sourceTree = "<group>"; };
+		B994523225668A62002601B2 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		B9AA28FD2563F1F5002601BA /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		B9AA29002563F214002601BA /* ThrowsErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowsErrors.swift; sourceTree = "<group>"; };
 		B9AA29032563F230002601BA /* IdentifiableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableError.swift; sourceTree = "<group>"; };
@@ -166,23 +174,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B98FC73F25656DDA004C8A2C /* SCSDKLoginKit.framework in Frameworks */,
-				B98FC74125656DDA004C8A2C /* SCSDKCreativeKit.framework in Frameworks */,
+				B994523025668805002601B2 /* SCSDKLoginKit.framework in Frameworks */,
+				B994522E25668804002601B2 /* SCSDKCreativeKit.framework in Frameworks */,
 				B98FC73A25656DA5004C8A2C /* SDWebImageSwiftUI in Frameworks */,
-				B98FC74025656DDA004C8A2C /* SCSDKCoreKit.framework in Frameworks */,
+				B994522C25668803002601B2 /* SCSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EE82C18983D6FC35A4CD2AD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		50752D362562AE290018242B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +228,7 @@
 		B98FC6BF25652859004C8A2C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B994523225668A62002601B2 /* AuthRequest.swift */,
 				B98FC6E6256548BE004C8A2C /* EmptyRequest.swift */,
 				B98FC6B325652227004C8A2C /* FeedPage.swift */,
 				B98FC6B625652480004C8A2C /* FeedPageRequest.swift */,
@@ -377,7 +379,6 @@
 			children = (
 				B9B41D862561324C003BDB2C /* Frontend */,
 				B9B41D852561324C003BDB2C /* Products */,
-				2EE82C18983D6FC35A4CD2AD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -624,6 +625,7 @@
 				B98FC70F2565526D004C8A2C /* AuthController.swift in Sources */,
 				B98FC69925651BB3004C8A2C /* CommentListPreview.swift in Sources */,
 				B98FC70325654CC5004C8A2C /* DiscountScreen.swift in Sources */,
+				B994523325668A62002601B2 /* AuthRequest.swift in Sources */,
 				B90DE0A72563EF9500A67055 /* Comment.swift in Sources */,
 				B98FC6D025653E3E004C8A2C /* PostStack.swift in Sources */,
 				50752D342562ADF60018242B /* SignInView.swift in Sources */,
@@ -794,7 +796,7 @@
 					"$(PROJECT_DIR)/Frontend/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.ms.Frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.canopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -828,7 +830,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frontend/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.ms.Frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.canopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
