@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CommentList: View {
-    let commentIDs: [UUID]
+    let commentIDs: [ID]
     
     var body: some View {
         ScrollView {

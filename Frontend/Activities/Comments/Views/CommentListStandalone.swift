@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CommentListStandalone: View {
-    let commentIDs: [UUID]
+    let commentIDs: [ID]
     
     var body: some View {
         PaddedView(title: "Comments") {

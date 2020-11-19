@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Feed: View {
     
-    var postIDs: [UUID]?
+    var postIDs: [ID]?
     
     @ObservedObject private var controller = FeedController.shared
     

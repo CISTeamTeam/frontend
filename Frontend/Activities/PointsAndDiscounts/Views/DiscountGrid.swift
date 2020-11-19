@@ -17,7 +17,7 @@ struct DiscountGrid: View, Loadable {
     var key: Bool { true }
     @ObservedObject var loader = AllDiscountsLoader.main
     
-    func body(with discountIDs: [UUID]) -> some View {
+    func body(with discountIDs: [ID]) -> some View {
         LazyVGrid(columns: gridLayout, spacing: 0) {
             ForEach(discountIDs, id: \.self) { discountID in
                 DiscountView(discountID: discountID)

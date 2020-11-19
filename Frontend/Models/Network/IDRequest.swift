@@ -8,7 +8,7 @@
 import Foundation
 
 struct IDRequest: Encodable {
-    let id: UUID
+    let id: ID
     
     func encoded() -> Data {
         let encoder = JSONEncoder()

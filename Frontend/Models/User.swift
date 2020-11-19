@@ -8,7 +8,7 @@
 import Foundation
 
 struct User: Codable, Hashable, Identifiable {
-    let id: UUID
+    let id: ID
     
     var username: String
     var name: String
@@ -16,5 +16,5 @@ struct User: Codable, Hashable, Identifiable {
     
     var profilePictureURL: URL?
     
-    var posts: [UUID]
+    var posts: [ID]
 }

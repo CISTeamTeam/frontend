@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CommentView: View, Loadable {
-    let commentID: UUID
+    let commentID: ID
     
-    var key: UUID { commentID }
+    var key: ID { commentID }
     
     @StateObject var loader = CommentLoader()
     

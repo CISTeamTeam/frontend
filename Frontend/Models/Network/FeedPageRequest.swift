@@ -8,7 +8,7 @@
 import Foundation
 
 struct FeedPageRequest: Encodable, Hashable {
-    let userID: UUID?
+    let userID: ID?
     let hash: String?
     
     func encoded() -> Data {

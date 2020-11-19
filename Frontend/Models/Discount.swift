@@ -8,7 +8,7 @@
 import Foundation
 
 struct Discount: Codable, Hashable, Identifiable {
-    let id: UUID
+    let id: ID
     
     var storeName: String
     var name: String

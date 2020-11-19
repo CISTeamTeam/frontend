@@ -10,7 +10,7 @@ import Foundation
 
 class FeedController: ObservableObject, ThrowsErrors {
     
-    @Published var postIDs = [UUID]()
+    @Published var postIDs = [ID]()
     @Published var error: IdentifiableError?
     
     private var currentPage: FeedPage? {
@@ -66,7 +66,7 @@ class FeedController: ObservableObject, ThrowsErrors {
     
     // MARK: - Read Posts
     
-    func markAsRead(_ postID: UUID) {
+    func markAsRead(_ postID: ID) {
         postIDs.removeAll { $0 == postID }
         
         let request = createMarkAsReadRequest(postID: postID)
@@ -100,7 +100,7 @@ class FeedController: ObservableObject, ThrowsErrors {
         return request
     }
     
-    private func createMarkAsReadRequest(postID: UUID) -> URLRequest {
+    private func createMarkAsReadRequest(postID: ID) -> URLRequest {
         let endpoint = "readPost"
         let body = IDRequest(id: postID)
         let url = Constants.baseURL.appendingPathComponent(endpoint)

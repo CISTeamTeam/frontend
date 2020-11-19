@@ -8,7 +8,7 @@
 import Foundation
 
 struct FeedPage: Decodable, Hashable {
-    let posts: [UUID]
+    let posts: [ID]
     let hash: String
 }
 

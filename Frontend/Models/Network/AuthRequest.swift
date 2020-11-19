@@ -8,7 +8,7 @@
 import Foundation
 
 struct AuthRequest: Encodable, Hashable {
-    let id: UUID
+    let id: ID
     
     func encoded() -> Data {
         let encoder = JSONEncoder()

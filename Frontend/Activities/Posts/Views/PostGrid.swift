@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PostGrid: View {
-    let postIDs: [UUID]
+    let postIDs: [ID]
     
     private let gridLayout = [
         GridItem(.flexible(), spacing: 0),

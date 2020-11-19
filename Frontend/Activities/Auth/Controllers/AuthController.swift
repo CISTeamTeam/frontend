@@ -36,7 +36,7 @@ class AuthController: ObservableObject, ThrowsErrors {
     
     // MARK: - Server Auth
     
-    private func authenticate(_ id: UUID) {
+    private func authenticate(id: String) {
         let request = createAuthRequest(id: id)
         URLSession.shared
             .dataTaskPublisher(for: request)
@@ -49,15 +49,23 @@ class AuthController: ObservableObject, ThrowsErrors {
             .sink { [weak self] completion in
                 self?.catchCompletionError(completion)
             } receiveValue: { status in
-                return
+                switch status {
+                case .success:
+                    self.setStatus(.ready)
+                case .failure:
+                    self.login(id: id)
+                }
             }
             .store(in: &cancellables)
     }
     
-    private func createAuthRequest(id: UUID) -> URLRequest {
+    private func login(id: ID) {
+        
+    }
+    
+    private func createAuthRequest(id: ID) -> URLRequest {
         let endpoint = "authenticate"
         let url = Constants.baseURL.appendingPathComponent(endpoint)
-        
         let authRequest = AuthRequest(id: id)
         
         var request = URLRequest(url: url)

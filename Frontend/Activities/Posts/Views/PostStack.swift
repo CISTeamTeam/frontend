@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PostStack: View {
-    let postIDs: [UUID]
+    let postIDs: [ID]
     
     var body: some View {
         LazyVStack {

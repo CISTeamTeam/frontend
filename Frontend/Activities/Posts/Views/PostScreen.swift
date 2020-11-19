@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PostScreen: View {
-    let postID: UUID
+    let postID: ID
     
     var body: some View {
         ScrollView {

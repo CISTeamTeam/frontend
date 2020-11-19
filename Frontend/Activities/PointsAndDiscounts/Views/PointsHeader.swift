@@ -10,7 +10,7 @@ import SwiftUI
 struct PointsHeader: View, Loadable {
     let user: User
     
-    var key: UUID { user.id }
+    var key: ID { user.id }
     
     @StateObject var loader = UserPointsLoader()
     

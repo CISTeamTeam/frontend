@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CommentListPreview: View {
-    let commentIDs: [UUID]
+    let commentIDs: [ID]
     
     var body: some View {
         VStack(spacing: 12) {

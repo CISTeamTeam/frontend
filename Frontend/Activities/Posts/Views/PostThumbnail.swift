@@ -11,9 +11,9 @@ import SwiftUI
 struct PostThumbnail: View, Loadable {
     @StateObject var loader = PostLoader()
     
-    let postID: UUID
+    let postID: ID
     
-    var key: UUID { postID }
+    var key: ID { postID }
     
     func body(with post: Post) -> some View {
         PostImage(post: post)

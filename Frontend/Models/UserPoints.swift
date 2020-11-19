@@ -8,6 +8,6 @@
 import Foundation
 
 struct UserPoints: Codable, Hashable, Identifiable {
-    let id: UUID
+    let id: ID
     let points: Int
 }

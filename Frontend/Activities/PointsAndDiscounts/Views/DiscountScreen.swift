@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DiscountScreen: View, Loadable {
-    let discountID: UUID
+    let discountID: ID
     
-    var key: UUID { discountID }
+    var key: ID { discountID }
     
     @StateObject var loader = DiscountLoader()
     

@@ -8,9 +8,9 @@
 import Foundation
 
 struct Comment: Codable, Hashable, Identifiable {
-    let id: UUID
-    let authorID: UUID
-    let postID: UUID
+    let id: ID
+    let authorID: ID
+    let postID: ID
     
     var text: String
     

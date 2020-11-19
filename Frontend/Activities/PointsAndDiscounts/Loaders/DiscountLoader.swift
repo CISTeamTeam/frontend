@@ -27,13 +27,13 @@ class DiscountLoader: Loader {
         cancel()
     }
     
-    func loadPlaceholderIfAvailable(for key: UUID) -> Bool {
+    func loadPlaceholderIfAvailable(for key: ID) -> Bool {
         guard Placeholders.discounts.map(\.id).contains(key) else { return false }
         object = Placeholders.discounts.first { $0.id == key }
         return object != nil
     }
     
-    func createRequest(for key: UUID) -> URLRequest {
+    func createRequest(for key: ID) -> URLRequest {
         let body = IDRequest(id: key)
         let url = Constants.baseURL.appendingPathComponent(endpoint)
         

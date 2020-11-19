@@ -10,7 +10,7 @@ import Foundation
 
 class AllDiscountsLoader: Loader {
     
-    @Published var object: [UUID]?
+    @Published var object: [ID]?
     @Published var error: IdentifiableError?
     
     /// The endpoint for the loader

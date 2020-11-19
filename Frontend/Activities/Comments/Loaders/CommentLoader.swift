@@ -27,13 +27,13 @@ class CommentLoader: Loader {
         cancel()
     }
     
-    func loadPlaceholderIfAvailable(for key: UUID) -> Bool {
+    func loadPlaceholderIfAvailable(for key: ID) -> Bool {
         guard Placeholders.comments.map(\.id).contains(key) else { return false }
         object = Placeholders.comments.first { $0.id == key }
         return object != nil
     }
     
-    func createRequest(for key: UUID) -> URLRequest {
+    func createRequest(for key: ID) -> URLRequest {
         let body = FetchRequest(id: key)
         let url = Constants.baseURL.appendingPathComponent(endpoint)
         

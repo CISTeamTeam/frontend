@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct Profile: View, Loadable {
-    let userID: UUID
+    let userID: ID
     
-    var key: UUID { userID }
+    var key: ID { userID }
     
     @StateObject var loader = UserLoader()
     

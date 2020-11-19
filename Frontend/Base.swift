@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+typealias ID = String
+
 struct Base: View {
     var body: some View {
         TabView {
