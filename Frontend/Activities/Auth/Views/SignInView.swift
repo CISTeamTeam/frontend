@@ -21,14 +21,6 @@ struct SignInView: View {
 //            signInWithAppleButton
             logInWithSnapchatButton
         }
-        .padding(15)
-//            .alert(errorBinding: $authenticationManager.error)
-        .fullScreenCover(isPresented: $authController.isLoading) {
-            ZStack {
-                Color.black.opacity(0.8)
-                ProgressView()
-            }
-        }
     }
     
     private var closeButton: some View {

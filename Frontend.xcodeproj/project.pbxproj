@@ -49,6 +49,10 @@
 		B994523025668805002601B2 /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */; };
 		B994523125668805002601B2 /* SCSDKLoginKit.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B994523325668A62002601B2 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994523225668A62002601B2 /* AuthRequest.swift */; };
+		B9945237256691EF002601B2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9945236256691EF002601B2 /* SignUpView.swift */; };
+		B99452392566B09F002601B2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99452382566B09F002601B2 /* ImagePicker.swift */; };
+		B99452402566B610002601B2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994523F2566B610002601B2 /* AuthView.swift */; };
+		B99452422566B68D002601B2 /* SelfProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99452412566B68D002601B2 /* SelfProfile.swift */; };
 		B9AA28FE2563F1F5002601BA /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA28FD2563F1F5002601BA /* Loader.swift */; };
 		B9AA29012563F214002601BA /* ThrowsErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29002563F214002601BA /* ThrowsErrors.swift */; };
 		B9AA29042563F230002601BA /* IdentifiableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29032563F230002601BA /* IdentifiableError.swift */; };
@@ -136,6 +140,10 @@
 		B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKCoreKit.framework; sourceTree = "<group>"; };
 		B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKCreativeKit.framework; sourceTree = "<group>"; };
 		B994523225668A62002601B2 /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		B9945236256691EF002601B2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		B99452382566B09F002601B2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B994523F2566B610002601B2 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		B99452412566B68D002601B2 /* SelfProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfProfile.swift; sourceTree = "<group>"; };
 		B9AA28FD2563F1F5002601BA /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		B9AA29002563F214002601BA /* ThrowsErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowsErrors.swift; sourceTree = "<group>"; };
 		B9AA29032563F230002601BA /* IdentifiableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableError.swift; sourceTree = "<group>"; };
@@ -187,7 +195,9 @@
 		50752D362562AE290018242B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B994523F2566B610002601B2 /* AuthView.swift */,
 				50752D332562ADF60018242B /* SignInView.swift */,
+				B9945236256691EF002601B2 /* SignUpView.swift */,
 				B98FC70B256551C3004C8A2C /* LogInWithSnapchatButton.swift */,
 			);
 			path = Views;
@@ -213,6 +223,7 @@
 				B98FC6C625653DB6004C8A2C /* Padding-Default.swift */,
 				B98FC6D325653F88004C8A2C /* PaddedView.swift */,
 				B98FC7112565565B004C8A2C /* CloseButton.swift */,
+				B99452382566B09F002601B2 /* ImagePicker.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -488,6 +499,7 @@
 		B9B41DB025613383003BDB2C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B99452412566B68D002601B2 /* SelfProfile.swift */,
 				B9AA29172563FAD6002601BA /* Profile.swift */,
 				B9AA292625640010002601BA /* ProfileHeader.swift */,
 				B98FC69E25651D84004C8A2C /* ProfileName.swift */,
@@ -600,6 +612,7 @@
 				B98FC6EB25654910004C8A2C /* DiscountLoader.swift in Sources */,
 				B98FC69F25651D84004C8A2C /* ProfileName.swift in Sources */,
 				B98FC6F425654A66004C8A2C /* UserPointsLoader.swift in Sources */,
+				B99452402566B610002601B2 /* AuthView.swift in Sources */,
 				B98FC6DA2565413A004C8A2C /* CommentListStandalone.swift in Sources */,
 				B98FC6E425654847004C8A2C /* AllDiscountsLoader.swift in Sources */,
 				B9B41D882561324C003BDB2C /* App.swift in Sources */,
@@ -610,6 +623,7 @@
 				B9AA291E2563FDA4002601BA /* PostGrid.swift in Sources */,
 				B9AA29092563F569002601BA /* Load.swift in Sources */,
 				B9AA29042563F230002601BA /* IdentifiableError.swift in Sources */,
+				B99452422566B68D002601B2 /* SelfProfile.swift in Sources */,
 				B9AA292D256509C6002601BA /* Placeholders.swift in Sources */,
 				B9AA29182563FAD6002601BA /* Profile.swift in Sources */,
 				B9B41DAD25613371003BDB2C /* NewPost.swift in Sources */,
@@ -629,6 +643,7 @@
 				B90DE0A72563EF9500A67055 /* Comment.swift in Sources */,
 				B98FC6D025653E3E004C8A2C /* PostStack.swift in Sources */,
 				50752D342562ADF60018242B /* SignInView.swift in Sources */,
+				B99452392566B09F002601B2 /* ImagePicker.swift in Sources */,
 				B98FC6A225651DDA004C8A2C /* ProfileBio.swift in Sources */,
 				B98FC6B725652480004C8A2C /* FeedPageRequest.swift in Sources */,
 				B9AA29242563FF1B002601BA /* PostLoader.swift in Sources */,
@@ -636,6 +651,7 @@
 				B98FC6EE256549CA004C8A2C /* PointsDiscounts.swift in Sources */,
 				B9AA28FE2563F1F5002601BA /* Loader.swift in Sources */,
 				B98FC6F725654A72004C8A2C /* UserPoints.swift in Sources */,
+				B9945237256691EF002601B2 /* SignUpView.swift in Sources */,
 				B9B41D9E25613331003BDB2C /* PostView.swift in Sources */,
 				B98FC6AB25651F10004C8A2C /* PostDescription.swift in Sources */,
 				B9AA293925651274002601BA /* CommentLoader.swift in Sources */,

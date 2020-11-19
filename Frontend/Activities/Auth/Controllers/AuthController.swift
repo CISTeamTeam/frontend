@@ -11,32 +11,55 @@ import SCSDKLoginKit
 import SwiftUI
 import UIKit
 
+/// A controller that handles authentication
 class AuthController: ObservableObject, ThrowsErrors {
     
+    /// An authentication status
     enum Status {
         case ready
-        case authenticating
-        case signingUp
+        case loading
+        case signUpRequired(id: ID)
     }
     
-    @Published var status = Status.ready
+    /// Whether authentication is in progress
     @Published var isLoading = false
+    
+    /// A user ID to use to create a new user
+    @Published var signUpUserID: ID?
+    
+    /// An error, if one occurred
     @Published var error: IdentifiableError?
     
+    /// A set of tasks
     private var cancellables = Set<AnyCancellable>()
     
+    // MARK: - Status
+    
+    /// Sets the authentication status
+    /// - Parameter status: The new authentication status
     private func setStatus(_ status: Status) {
         DispatchQueue.main.async {
             withAnimation {
-                self.status = status
-                self.isLoading = status == .authenticating
+                switch status {
+                case .ready:
+                    self.isLoading = false
+                case .loading:
+                    self.isLoading = true
+                case let .signUpRequired(id: id):
+                    self.isLoading = false
+                    self.signUpUserID = id
+                }
             }
         }
     }
     
     // MARK: - Server Auth
     
+    /// Attempts to authenticate a user with a user ID
+    /// - Parameter id: The user's ID
     private func authenticate(id: String) {
+        setStatus(.loading)
+        
         let request = createAuthRequest(id: id)
         URLSession.shared
             .dataTaskPublisher(for: request)
@@ -53,16 +76,15 @@ class AuthController: ObservableObject, ThrowsErrors {
                 case .success:
                     self.setStatus(.ready)
                 case .failure:
-                    self.login(id: id)
+                    self.setStatus(.signUpRequired(id: id))
                 }
             }
             .store(in: &cancellables)
     }
     
-    private func login(id: ID) {
-        
-    }
-    
+    /// Creates a URL request to authenticate a user
+    /// - Parameter id: The user's ID
+    /// - Returns: A `URLRequest`
     private func createAuthRequest(id: ID) -> URLRequest {
         let endpoint = "authenticate"
         let url = Constants.baseURL.appendingPathComponent(endpoint)
@@ -70,20 +92,31 @@ class AuthController: ObservableObject, ThrowsErrors {
         
         var request = URLRequest(url: url)
         request.httpBody = authRequest.encoded()
+        print(String(data: request.httpBody!, encoding: .utf8)!)
         
         request.httpMethod = Constants.postMethod
         request.addValue(Constants.contentTypeJSON, forHTTPHeaderField: Constants.contentTypeHeader)
-        
+        print(request.description)
         return request
     }
     
+    private func login(id: ID) {
+        
+    }
+    
+    
+    
     // MARK: - Snapchat
     
-    private let graphQLQuery = "{me{displayName, bitmoji{avatar}, externalId}}"
-    private let variables = ["page": "bitmoji"]
+    /// The query used to fetch user data from Snapchat
+    private let snapchatQuery = "{me{displayName, bitmoji{avatar}, externalId}}"
     
+    /// Internal variables used to fetch data from Snapchat
+    private let snapchatVariables = ["page": "bitmoji"]
+    
+    /// Starts authenticating via the Snapchat app
     func startWithSnapchat() {
-        setStatus(.authenticating)
+        setStatus(.loading)
         
         SCSDKLoginClient.login(from: presentingViewController) { wasSuccessful, error in
             guard wasSuccessful, error == nil else {
@@ -91,11 +124,13 @@ class AuthController: ObservableObject, ThrowsErrors {
                 return
             }
             
-            SCSDKLoginClient.fetchUserData(withQuery: self.graphQLQuery, variables: self.variables, success: self.snapchatFetchHandler, failure: self.snapchatFailureHandler)
+            SCSDKLoginClient.fetchUserData(withQuery: self.snapchatQuery, variables: self.snapchatVariables, success: self.snapchatFetchCompleted, failure: self.snapchatFetchFailed)
         }
     }
     
-    private func snapchatFetchHandler(resources: [AnyHashable: Any]?) {
+    /// Called when user data is successfully fetched from the Snapchat API
+    /// - Parameter resources: A dictionary of user data
+    private func snapchatFetchCompleted(resources: [AnyHashable: Any]?) {
         guard let resources = resources,
               let data = resources["data"] as? [String: Any],
               let user = data["me"] as? [String: Any],
@@ -107,9 +142,12 @@ class AuthController: ObservableObject, ThrowsErrors {
         
         let bitmojiAvatarURL = getBitmojiAvatarURL(from: user)
         
-        // sign in
+        authenticate(id: externalID)
     }
     
+    /// Attempts to get a user's Bitmoji (Memoji) profile picture from Snapchat user data
+    /// - Parameter userObject: A dictionary of user data
+    /// - Returns: If successful, the URL to the user's profile picture
     private func getBitmojiAvatarURL(from userObject: [String: Any]) -> URL? {
         guard let bitmoji = userObject["bitmoji"] as? [String: Any],
               let avatarURLString = bitmoji["avatar"] as? String else {
@@ -118,19 +156,23 @@ class AuthController: ObservableObject, ThrowsErrors {
         return URL(string: avatarURLString)
     }
     
-    private func snapchatFailureHandler(error: Error?, isUserLoggedOut: Bool) {
-        DispatchQueue.main.async {
-            self.catchError(error)
-            self.setStatus(.ready)
-        }
+    /// Called when fetching user data from Snapchat fails
+    /// - Parameters:
+    ///   - error: An error, if one occurred
+    ///   - isUserLoggedOut: Whether the user has been logged out
+    private func snapchatFetchFailed(error: Error?, isUserLoggedOut: Bool) {
+        catchError(error)
+        setStatus(.ready)
     }
     
     // MARK: - UIKit Integration
     
+    /// The anchor on which to present login UI
     private var presentationAnchor: UIWindow {
         UIApplication.shared.keyWindow ?? UIWindow()
     }
     
+    /// The view controller on which to present login UI
     private var presentingViewController: UIViewController {
         presentationAnchor.rootViewController ?? UIViewController()
     }

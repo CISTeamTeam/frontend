@@ -16,7 +16,7 @@ struct Base: View {
                 .tabItem {
                     Label("For You", systemImage: "flowchart")
                 }
-            SignInView()
+            SelfProfile()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
