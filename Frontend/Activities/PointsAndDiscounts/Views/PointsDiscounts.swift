@@ -18,7 +18,13 @@ struct PointsDiscounts: View, Loadable {
     // This is similar to the main Profile view (header + grid)
     // I made grid for you since it's similar to PostGrid
     func body(with user: User) -> some View {
-        Text("TODO" + user.name)
+        VStack{
+            Text(user.name)
+                .font(.largeTitle)
+            PointsHeader(user: user)
+            DiscountGrid()
+        }
+        
     }
 }
 
