@@ -38,6 +38,34 @@ enum Placeholders {
             postID: UUID(uuidString: "ccf509b2-b26a-4f75-bddc-9e7946e33ae1")!,
             text: "Great!",
             creationDate: .init(timeIntervalSinceNow: -500)
+        ),
+        Comment(
+            id: UUID(uuidString: "f6d04991-deb7-4e43-8741-b86140774513")!,
+            authorID: UUID(uuidString: "46d4b4e5-afed-42eb-87df-0208f0fbb113")!,
+            postID: UUID(uuidString: "61bede89-8de3-42d4-9cc8-351f57ded067")!,
+            text: "This is so insightful thanks!",
+            creationDate: .init(timeIntervalSinceNow: -500)
+        ),
+        Comment(
+            id: UUID(uuidString: "7a3af137-50a3-40f5-aeb9-4eceb16f4998")!,
+            authorID: UUID(uuidString: "46d4b4e5-afed-42eb-87df-0208f0fbb113")!,
+            postID: UUID(uuidString: "f5cc5eb5-8049-47c6-89f8-2522878c8d21")!,
+            text: "You are the coolest",
+            creationDate: .init(timeIntervalSinceNow: -500)
+        ),
+        Comment(
+            id: UUID(uuidString: "98e2318e-fa6e-457c-99da-ce8a5d9f470e")!,
+            authorID: UUID(uuidString: "88a57326-3fd8-4adf-ae66-5e24a3561b44")!,
+            postID: UUID(uuidString: "a1fd730e-0b87-451a-8163-602050920f42")!,
+            text: "That's epic bro",
+            creationDate: .init(timeIntervalSinceNow: -500)
+        ),
+        Comment(
+            id: UUID(uuidString: "168fc86d-8bce-41dc-89b6-f21f0434a02e")!,
+            authorID: UUID(uuidString: "88a57326-3fd8-4adf-ae66-5e24a3561b44")!,
+            postID: UUID(uuidString: "ccf509b2-b26a-4f75-bddc-9e7946e33ae1")!,
+            text: "This is the kind of content I've been looking for",
+            creationDate: .init(timeIntervalSinceNow: -500)
         )
     ])
     
@@ -238,7 +266,27 @@ enum Placeholders {
             username: "croissantdream",
             name: "Loren",
             bio: "I'm loving Canopy!!",
-            profilePictureURL: imageURL,
+            profilePictureURL: URL(string: "https://i.imgur.com/8yyqjX0.jpg")!,
+            posts: [
+               
+            ]
+        ),
+        User(
+            id: UUID(uuidString: "88a57326-3fd8-4adf-ae66-5e24a3561b44")!,
+            username: "tisaclam",
+            name: "Issa",
+            bio: "Love trees like I love math",
+            profilePictureURL: URL(string: "https://i.imgur.com/SuQe1dW.jpg")!,
+            posts: [
+               
+            ]
+        ),
+        User(
+            id: UUID(uuidString: "46d4b4e5-afed-42eb-87df-0208f0fbb113")!,
+            username: "OnlyJS",
+            name: "Julia",
+            bio: "Swift is life!",
+            profilePictureURL: URL(string: "https://i.imgur.com/Oq6uwSK.jpg")!,
             posts: [
                
             ]
@@ -248,7 +296,7 @@ enum Placeholders {
             username: "eggbro",
             name: "Brody",
             bio: "This app is so cool",
-            profilePictureURL: imageURL,
+            profilePictureURL: URL(string: "https://i.imgur.com/HuQnH5B.jpg")!,
             posts: [
                
             ]
