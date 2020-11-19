@@ -49,14 +49,14 @@ enum Placeholders {
         Discount(
             id: UUID(),
             storeName: "Greendotdot",
-            name: "5 Grain Rice",
+            name: "25% off 5 Grain Rice",
             requiredPoints: 100,
-            description: "Get 50% off 5 Grain Rice with 100 points!"
+            description: "Get 25% off 5 Grain Rice with 100 points!"
         ),
         Discount(
             id: UUID(),
             storeName: "John Masters Organics",
-            name: "Shampoo For Fine Hair With Rosemary And Peppermint",
+            name: "50% off Rosemary Shampoo",
             requiredPoints: 250,
             description: "Get 50% off Shampoo For Fine Hair With Rosemary And Peppermint with 250 points!"
         )
@@ -132,7 +132,7 @@ enum Placeholders {
         ),
         User(
             id: UUID(uuidString: "d2db228e-5d9d-4479-b81a-a9521ff5c63e")!,
-            username: "greenfatbu",
+            username: "treebu",
             name: "Nick",
             bio: "I post photos!",
             profilePictureURL: URL(string: "https://i.imgur.com/hLtIC3a.jpg")!,

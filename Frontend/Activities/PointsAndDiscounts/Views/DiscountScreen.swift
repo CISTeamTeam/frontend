@@ -17,7 +17,12 @@ struct DiscountScreen: View, Loadable {
     // - TODO: Create the screen that shows discount details (this shows more details than DiscountView as it is shown filling the whole screen)
     // Show price, title, description, and a button to redeem the discount
     func body(with discount: Discount) -> some View {
-        Text("TODO" + discount.name)
+        VStack{
+            Text(discount.name).font(.title).padding()
+            Text(String(discount.requiredPoints) + " Points")
+                .font(.title2)
+                .fontWeight(.light)
+        }
     }
 }
 

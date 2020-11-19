@@ -18,10 +18,29 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLSchemes</key>
+	<array>
+		<string>canopy</string>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>snapchat</string>
+		<string>bitmoji-sdk</string>
+		<string>itms-apps</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>SCSDKClientId</key>
+	<string>2cd166ad-5844-4b37-a710-bd3bfded9770</string>
+	<key>SCSDKRedirectUrl</key>
+	<string>canopy://snap-kit/oauth2</string>
+	<key>SCSDKScopes</key>
+	<array>
+		<string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
+		<string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -29,25 +48,6 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-    <key>SCSDKScopes</key>
-    <array>
-        <string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
-        <string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>
-    </array>
-    <key>SCSDKClientId</key>
-    <string>2cd166ad-5844-4b37-a710-bd3bfded9770</string>
-    <key>SCSDKRedirectUrl</key>
-    <string>canopy://snap-kit/oauth2</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>snapchat</string>
-        <string>bitmoji-sdk</string>
-        <string>itms-apps</string>
-    </array>
-    <key>CFBundleURLSchemes</key>
-    <array>
-        <string>canopy</string>
-    </array>
 	<key>UILaunchScreen</key>
 	<dict/>
 	<key>UIRequiredDeviceCapabilities</key>

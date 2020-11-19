@@ -14,11 +14,11 @@ struct PointsHeader: View, Loadable {
     
     @StateObject var loader = UserPointsLoader()
     
-    // - TODO: Create the header for `PointsDiscount` view, by showing "You have", then new line, then very large text with the amount of points the user has, then new line, then "points"
     func body(with userPoints: UserPoints) -> some View {
         VStack{
-            Text("You Have").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            Text(userPoints.points.description).font(.caption)
+            Text("You Have").font(.title).fontWeight(.light)
+            Text(userPoints.points.description).font(.system(size: 100))
+            Text("Points").font(.body).fontWeight(.light)
         }
     }
 }

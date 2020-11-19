@@ -17,12 +17,20 @@ struct DiscountView: View, Loadable {
     // - TODO: Create view for discount showing the title and amount of points required
     // This will be shown in a grid (like the post grid) so it should be a vertical stack
     func body(with discount: Discount) -> some View {
-        Text("TODO" + discount.name)
+        VStack{
+            Text(discount.name)
+                .font(.title2).bold().multilineTextAlignment(.center)
+            Spacer()
+            Text(String(discount.requiredPoints) + " Points")
+                .fontWeight(.light)
+        }.padding().frame(maxWidth: .infinity, maxHeight: .infinity).border(Color.black)
     }
 }
 
 struct DiscountView_Previews: PreviewProvider {
     static var previews: some View {
         DiscountView(discountID: Placeholders.aDiscount.id)
+            .frame(width: 200, height: 200)
+            .border(Color.black)
     }
 }
