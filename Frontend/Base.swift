@@ -7,30 +7,32 @@
 
 import SwiftUI
 
-typealias ID = String
-
 struct Base: View {
     var body: some View {
         TabView {
             Feed(postIDs: Placeholders.posts.map(\.id))
                 .tabItem {
-                    Label("For You", systemImage: "leaf.arrow.circlepath")
-                }
-            NewPost()
-                .tabItem {
-                Label("New Post", systemImage: "plus.app.fill")
-            }
-            SelfProfile()
-                .tabItem {
-                    Label("Profile", systemImage: "person.fill")
+                    Image(systemName: "leaf.fill")
+                    Text("For You")
                 }
             ChallengeList(challengeIDs: Placeholders.challenges.map(\.id))
                 .tabItem {
-                Label("Challenges", systemImage: "rosette")
-            }
+                    Image(systemName: "lightbulb.fill")
+                    Text("Challenges")
+                }
+            NewPost()
+                .tabItem {
+                    Image(systemName: "plus")
+                }
             PointsDiscounts(userID: Placeholders.aUser.id)
                 .tabItem {
-                    Label("Points", systemImage: "person.fill")
+                    Image(systemName: "ticket.fill")
+                    Text("Discounts")
+                }
+            SelfProfile()
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
                 }
         }
     }

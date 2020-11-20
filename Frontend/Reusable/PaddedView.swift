@@ -21,7 +21,6 @@ struct PaddedView<Content: View>: View {
             .defaultPadding()
             .padding(.top, 10)
             .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

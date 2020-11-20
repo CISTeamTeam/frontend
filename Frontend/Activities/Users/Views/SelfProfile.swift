@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct SelfProfile: View {
+    @AppStorage("signedInUserID") var signedInUserID: ID?
+    
     var body: some View {
-        AuthView()
+        NavigationView {
+            if let id = signedInUserID {
+                Profile(userID: id)
+            } else {
+                AuthView()
+            }
+        }
     }
 }
 

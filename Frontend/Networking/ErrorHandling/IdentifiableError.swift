@@ -10,7 +10,7 @@ import Foundation
 typealias AnyIdentifiableError = Error & Identifiable
 
 /// A uniquely identifiable error
-struct IdentifiableError: Error, Identifiable {
+struct IdentifiableError: Error, Equatable, Identifiable {
     /// A unique identifier
     var id: String
     
@@ -34,6 +34,15 @@ struct IdentifiableError: Error, Identifiable {
         }
         
         self.error = error
+    }
+    
+    /// Checks whether two errors are the same
+    /// - Parameters:
+    ///   - lhs: An error
+    ///   - rhs: Another error
+    /// - Returns: Whether the errors the same
+    static func == (lhs: IdentifiableError, rhs: IdentifiableError) -> Bool {
+        lhs.id == rhs.id
     }
 }
 

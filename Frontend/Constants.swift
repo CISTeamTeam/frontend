@@ -7,8 +7,12 @@
 
 import Foundation
 
+/// Constants for the app
 enum Constants {
-    static let baseURL = URL(string: "http://fatbu.dynu.net:8000")!
+    static let baseURL = URL(string: "https://70fe18a0bc23.ngrok.io")!
+    
+    /// The name of the `UserDefaults` key for the currently signed in user
+    static let signedInUserIDKey = "signedInUserID"
     
     // MARK: - URL Requests
     static let contentTypeHeader = "Content-Type"

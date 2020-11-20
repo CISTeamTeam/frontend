@@ -39,7 +39,7 @@ struct Load<Loader: Frontend.Loader, Value, Content: View>: View {
     
     var body: some View {
         bodyContent
-            //            .alert(errorBinding: $loader.error)
+            .alert(errorBinding: $loader.error)
             .onAppear {
                 loader.load(key: key)
             }

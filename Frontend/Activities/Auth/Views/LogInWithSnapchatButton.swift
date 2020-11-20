@@ -40,7 +40,7 @@ struct LogInWithSnapchatButton: View {
     
     private var label: some View {
         Text("Continue with Snapchat")
-            .font(.title3)
+            .font(.title2)
             .fontWeight(.semibold)
     }
 }

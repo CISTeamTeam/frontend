@@ -5,6 +5,7 @@
 //  Created by Julian Schiavo on 19/11/2020.
 //
 
+import AuthenticationServices
 import SwiftUI
 
 extension String: Identifiable {
@@ -17,46 +18,38 @@ struct AuthView: View {
     @ObservedObject private var authController = AuthController.shared
     
     var body: some View {
-        contents
-            .padding(15)
-            //            .alert(errorBinding: $authenticationManager.error)
-            .fullScreenCover(isPresented: $authController.isLoading) {
-                ZStack {
-                    Color.black.opacity(0.5)
-                    ProgressView()
-                }
+        PaddedView(title: "Welcome to Canopy") {
+            VStack(alignment: .leading) {
+                Spacer()
+                signInWithAppleButton
+                logInWithSnapchatButton
             }
-    }
-    
-    @ViewBuilder private var contents: some View {
-        if let id = authController.signUpUserID {
-            SignUpView(id: id)
-        } else {
-            SignInView()
+            .padding(.bottom, 30)
+        }
+        .alert(errorBinding: $authController.error)
+        .fullScreenCover(isPresented: $authController.isLoading) {
+            ZStack {
+                Color.black.opacity(0.5)
+                ProgressView()
+            }
         }
     }
     
-    private var closeButton: some View {
-        CloseButton()
-            .alignedHorizontally(to: .trailing, padding: 10)
+    private var signInWithAppleButton: some View {
+        SignInWithAppleButton(.continue) { request in
+            authController.startWithApple(request: request)
+        } onCompletion: { result in
+            switch result {
+            case let .success(authorization):
+                authController.appleAuthCompleted(with: authorization)
+            case let .failure(error):
+                authController.appleAuthFailed(with: error)
+            }
+        }
+        .signInWithAppleButtonStyle(.whiteOutline)
+        .cornerRadius(15)
+        .frame(height: 60)
     }
-    
-    private var title: some View {
-        Text("Sign In to Canopy")
-            .font(.largeTitle)
-            .fontWeight(.heavy)
-    }
-    
-    //    private var signInWithAppleButton: some View {
-    //        SignInWithAppleButton(.continue) { request in
-    //            self.authenticationManager.startAuthenticatingWithApple(request: request)
-    //        } onCompletion: { result in
-    //            self.authenticationManager.finishAuthenticatingWithApple(result: result)
-    //        }
-    //        .signInWithAppleButtonStyle(.white)
-    //        .cornerRadius(15)
-    //        .frame(height: 60)
-    //    }
     
     private var logInWithSnapchatButton: some View {
         LogInWithSnapchatButton {
