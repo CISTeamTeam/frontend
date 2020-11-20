@@ -10,6 +10,37 @@ import Foundation
 enum Placeholders {
     static private let imageURL = URL(string: "https://i.imgur.com/0loCM3K.jpg")!
     
+    static var challenges = Set<Challenge>([
+        Challenge(
+            id: "8b3fcaf1-7bbb-4e6c-b029-b1ca17e16b2d",
+            name: "Hug a Tree!",
+            rewardPoints: 200,
+            description: "Take a picture of yourself hugging a tree! Add a description about the type of tree and some of the cool things it does for us! Best picture gets 200 points",
+            endDate: .init(timeIntervalSinceNow: 86400),
+            imageURL: imageURL
+        ),
+        Challenge(
+            id: "63f8a063-92b2-4caa-8381-a349fcffdba6",
+            name: "Design Challenge",
+            rewardPoints: 1000,
+            description: "Take a picture and write about an invention that helps you solve an environmental issue!",
+            endDate: .init(timeIntervalSinceNow: 604800),
+            imageURL: imageURL
+        ),
+        Challenge(
+            id: "2f4629b7-d793-42d7-8367-930cc5d9d981",
+            name: "Beach Cleanup",
+            rewardPoints: 500,
+            description: "Take a picture of yourself at a beach cleanup! Talk about where you are and ways littering harms the environment",
+            endDate: .init(timeIntervalSinceNow: 604800),
+            imageURL: imageURL
+        ),
+    ])
+    
+    static var aChallenge: Challenge {
+        challenges.randomElement()!
+    }
+    
     static var comments = Set<Comment>([
         Comment(
             id: "f6d04991-deb7-4e43-8741-b86140774513",
@@ -68,6 +99,7 @@ enum Placeholders {
             creationDate: .init(timeIntervalSinceNow: -500)
         )
     ])
+    
     
     static var aComment: Comment {
         comments.randomElement()!
@@ -194,8 +226,8 @@ enum Placeholders {
         Post(
             id: "20ae1c0a-89ee-4baa-894d-cec51891f2e8",
             authorID: "9c01220d-4acb-4282-b0b7-306fb2b9f9b1",
-            description: "WASTING SO MUCH FOR PACKAGING!!! UNREASONABLE!!!",
-            url: URL(string: "https://i.imgur.com/a7MO3jr.jpg")!,
+            description: "So serene! If we keep polluting our waters we won't have places like this anymore!!",
+            url: URL(string: "https://i.imgur.com/SYdO76t.jpg")!,
             comments: [
                 "98e2318e-fa6e-457c-99da-ce8a5d9f470e"
             ]
