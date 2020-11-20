@@ -72,9 +72,8 @@ class AuthController: ObservableObject, ThrowsErrors {
     private func createAuthRequest(id: ID) -> URLRequest {
         let endpoint = "authenticate"
         let url = Constants.baseURL.appendingPathComponent(endpoint)
-        
-        let authRequest = IDRequest(id: id)
-        return URLRequest.postRequest(url: url, body: authRequest)
+        let body = IDRequest(id: id)
+        return .postRequest(url: url, body: body)
     }
     
     /// Signs up and creates a new user

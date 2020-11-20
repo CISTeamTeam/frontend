@@ -40,7 +40,7 @@ extension View {
     private func alert(for error: Error) -> Alert {
         let title = Text(error.userVisibleTitle)
         let message = Text(error.userVisibleOverallDescription)
-        let button = Alert.Button.default(Text("ok"))
+        let button = Alert.Button.default(Text("OK"))
         return Alert(title: title, message: message, dismissButton: button)
     }
 }

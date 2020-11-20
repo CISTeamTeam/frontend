@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelfProfile: View {
-    @AppStorage("signedInUserID") var signedInUserID: ID?
+    @AppStorage(Constants.signedInUserIDKey) var signedInUserID: ID?
     
     var body: some View {
         NavigationView {

@@ -12,7 +12,7 @@ enum Constants {
     static let baseURL = URL(string: "https://70fe18a0bc23.ngrok.io")!
     
     /// The name of the `UserDefaults` key for the currently signed in user
-    static let signedInUserIDKey = "signedInUserID"
+    static let signedInUserIDKey = "signedInUserID" + UUID().uuidString
     
     // MARK: - URL Requests
     static let contentTypeHeader = "Content-Type"

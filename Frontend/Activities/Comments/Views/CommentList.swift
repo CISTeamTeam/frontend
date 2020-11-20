@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+/// A view showing all of the comments on a post
 struct CommentList: View {
+    /// The ID of the post
+    let postID: ID
+    
+    /// The IDs of the comments on the post
     let commentIDs: [ID]
     
+    /// The contents of the view
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -19,11 +25,15 @@ struct CommentList: View {
                 }
             }
         }
+        .overlay(
+            NewComment(postID: postID)
+                .alignedVertically(to: .bottom)
+        )
     }
 }
 
 struct CommentList_Previews: PreviewProvider {
     static var previews: some View {
-        CommentList(commentIDs: Placeholders.comments.map(\.id))
+        CommentList(postID: Placeholders.aPost.id, commentIDs: Placeholders.comments.map(\.id))
     }
 }

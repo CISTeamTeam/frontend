@@ -19,17 +19,14 @@ protocol Loader: ObservableObject, ThrowsErrors {
     /// The loaded object
     var object: Object? { get set }
     
+    /// An ongoing request
+    var cancellable: AnyCancellable? { get set }
+    
     /// Creates a `URLRequest` for a network loading request
     func createRequest(for key: Key) -> URLRequest
     
     /// Loads placeholder data if the key matches a placeholder object, returning whether a placeholder was loaded.
     func loadPlaceholderIfAvailable(for key: Key) -> Bool
-    
-    /// Stores a cancellable pipe from the Combine framework
-    func storeCancellable(_ cancellable: AnyCancellable)
-    
-    /// Cancels any ongoing requests
-    func cancel()
 }
 
 extension Loader {
@@ -52,12 +49,15 @@ extension Loader {
         guard !loadPlaceholderIfAvailable(for: key) else { return }
         
         let request = createRequest(for: key)
+        print("LOADERREQ", String(data: request.httpBody!, encoding: .utf8)!)
+        print(request.debugDescription)
         
-        let cancellable = URLSession.shared
+        cancellable = URLSession.shared
             .dataTaskPublisher(for: request)
             .retry(1)
             .map {
-                $0.data
+                print(String(data: $0.data, encoding: .utf8)!)
+                return $0.data
             }
             .decode(type: Object.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
@@ -66,7 +66,6 @@ extension Loader {
             } receiveValue: { [weak self] object in
                 self?.object = object
             }
-        storeCancellable(cancellable)
     }
     
     /// Requests for the object for a key to be reloaded
@@ -76,5 +75,11 @@ extension Loader {
         object = nil
         dismissError()
         load(key: key)
+    }
+    
+    /// Cancels any ongoing requests
+    func cancel() {
+        cancellable?.cancel()
+        cancellable = nil
     }
 }

@@ -44,6 +44,7 @@ extension ThrowsErrors {
     /// - Parameter completion: The completion received from the publisher
     func catchCompletionError(_ completion: Subscribers.Completion<Error>) {
         guard case let .failure(error) = completion else { return }
+        print("ERROR", error)
         catchError(error)
     }
 }

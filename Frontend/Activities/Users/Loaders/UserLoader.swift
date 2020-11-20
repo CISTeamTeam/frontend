@@ -34,16 +34,10 @@ class UserLoader: Loader {
     }
     
     func createRequest(for key: ID) -> URLRequest {
-        let body = IDRequest(id: key)
         let url = Constants.baseURL.appendingPathComponent(endpoint)
-        
-        var request = URLRequest(url: url)
-        request.httpBody = body.encoded()
-        
-        request.httpMethod = Constants.postMethod
-        request.addValue(Constants.contentTypeJSON, forHTTPHeaderField: Constants.contentTypeHeader)
-        
-        return request
+        let body = IDRequest(id: key)
+        print(url, body)
+        return .postRequest(url: url, body: body)
     }
     
     func storeCancellable(_ cancellable: AnyCancellable) {

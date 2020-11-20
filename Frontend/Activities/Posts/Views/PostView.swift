@@ -23,7 +23,7 @@ struct PostView: View, Loadable {
             PostDescription(post: post)
                 .defaultPadding()
             Spacer().frame(height: 10)
-            CommentListPreview(commentIDs: post.comments)
+            CommentListPreview(postID: postID, commentIDs: post.comments)
                 .defaultPadding()
         }
     }

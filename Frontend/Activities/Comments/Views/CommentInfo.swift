@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+/// A view showing a comment and its author
 struct CommentInfo: View {
+    /// The comment to show
     let comment: Comment
     
+    /// The contents of the view
     var body: some View {
         VStack(spacing: 4) {
             UserUsernameLabel(userID: comment.authorID)
@@ -24,6 +27,7 @@ struct CommentInfo: View {
         }
     }
     
+    /// A date formatter used to format the comment's creation date
     private var dateFormatter: Formatter {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .short

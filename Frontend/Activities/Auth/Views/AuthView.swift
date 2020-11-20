@@ -28,10 +28,7 @@ struct AuthView: View {
         }
         .alert(errorBinding: $authController.error)
         .fullScreenCover(isPresented: $authController.isLoading) {
-            ZStack {
-                Color.black.opacity(0.5)
-                ProgressView()
-            }
+            LoadingOverlay()
         }
     }
     
