@@ -106,6 +106,7 @@
 		B9BBF8F72567F58200FEF8B7 /* DiscountsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8F62567F58200FEF8B7 /* DiscountsTab.swift */; };
 		B9BBF8F92567F86800FEF8B7 /* DiscountRedeemer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8F82567F86800FEF8B7 /* DiscountRedeemer.swift */; };
 		B9BBF8FB2567FC5E00FEF8B7 /* AllChallengesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8FA2567FC5E00FEF8B7 /* AllChallengesLoader.swift */; };
+		B9BBF8FD25680FDA00FEF8B7 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8FC25680FDA00FEF8B7 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -222,6 +223,7 @@
 		B9BBF8F62567F58200FEF8B7 /* DiscountsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountsTab.swift; sourceTree = "<group>"; };
 		B9BBF8F82567F86800FEF8B7 /* DiscountRedeemer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountRedeemer.swift; sourceTree = "<group>"; };
 		B9BBF8FA2567FC5E00FEF8B7 /* AllChallengesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChallengesLoader.swift; sourceTree = "<group>"; };
+		B9BBF8FC25680FDA00FEF8B7 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -586,6 +588,7 @@
 				B9B41D872561324C003BDB2C /* App.swift */,
 				B9B41D892561324C003BDB2C /* Base.swift */,
 				B9AA29112563F8C7002601BA /* Constants.swift */,
+				B9BBF8FC25680FDA00FEF8B7 /* Keys.swift */,
 				B9AA292C256509C6002601BA /* Placeholders.swift */,
 				B994524A2567A83D002601B2 /* Activities */,
 				B99452932567A83D002601B2 /* Models */,
@@ -772,6 +775,7 @@
 				B99452EC2567A83D002601B2 /* Modifier-Aligned.swift in Sources */,
 				B99452F22567B091002601B2 /* String-Alphanumeric.swift in Sources */,
 				B99452AF2567A83D002601B2 /* CommentInfo.swift in Sources */,
+				B9BBF8FD25680FDA00FEF8B7 /* Keys.swift in Sources */,
 				B99452D22567A83D002601B2 /* UserUsernameLabel.swift in Sources */,
 				B99452C82567A83D002601B2 /* ChallengeRow.swift in Sources */,
 				B99452CB2567A83D002601B2 /* ChallengesTab.swift in Sources */,
