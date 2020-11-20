@@ -11,17 +11,18 @@ struct ChallengeList: View {
     let challengeIDs: [ID]
     
     var body: some View {
-        List(challengeIDs, id: \.self) { id in
-            ChallengeRow(challengeID: id)
-                .padding(.vertical, 5)
+        NavigationView {
+            List(challengeIDs, id: \.self) { id in
+                ChallengeRow(challengeID: id)
+                    .padding(.vertical, 5)
+            }
+            .navigationTitle("Challenges")
         }
     }
 }
 
 struct ChallengeList_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ChallengeList(challengeIDs: Placeholders.challenges.map(\.id))
-        }
+        ChallengeList(challengeIDs: Placeholders.challenges.map(\.id))
     }
 }

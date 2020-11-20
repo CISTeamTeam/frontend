@@ -17,7 +17,7 @@ enum Placeholders {
             rewardPoints: 200,
             description: "Take a picture of yourself hugging a tree! Add a description about the type of tree and some of the cool things it does for us! Best picture gets 200 points",
             endDate: .init(timeIntervalSinceNow: 86400),
-            imageURL: imageURL
+            imageURL: URL(string: "https://i.imgur.com/9SQwgp4.jpg")!
         ),
         Challenge(
             id: "63f8a063-92b2-4caa-8381-a349fcffdba6",
@@ -25,7 +25,7 @@ enum Placeholders {
             rewardPoints: 1000,
             description: "Take a picture and write about an invention that helps you solve an environmental issue!",
             endDate: .init(timeIntervalSinceNow: 604800),
-            imageURL: imageURL
+            imageURL: URL(string: "https://i.imgur.com/BxZfNUO.jpg")!
         ),
         Challenge(
             id: "2f4629b7-d793-42d7-8367-930cc5d9d981",
@@ -33,8 +33,8 @@ enum Placeholders {
             rewardPoints: 500,
             description: "Take a picture of yourself at a beach cleanup! Talk about where you are and ways littering harms the environment",
             endDate: .init(timeIntervalSinceNow: 604800),
-            imageURL: imageURL
-        ),
+            imageURL: URL(string: "https://i.imgur.com/k0jlXwa.jpg")!
+        )
     ])
     
     static var aChallenge: Challenge {

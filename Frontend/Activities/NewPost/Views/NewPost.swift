@@ -15,38 +15,32 @@ struct NewPost: View {
     @State private var description = ""
     
     var body: some View {
-        VStack {
+        Form {
             if let image = image {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .padding()
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     
             }
             Button(action: { self.isImageSheetPresented.toggle() }, label: {
                 HStack{
-                    Image(systemName: "square.and.arrow.up").font(.largeTitle).frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    Text("Upload Image").font(.largeTitle)
+                    Image(systemName: "square.and.arrow.up").frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Text("Upload Image")
                 }
             })
             .sheet(isPresented: $isImageSheetPresented, content: {
                 ImagePicker(image: $image)
             })
-            
-            Form {
-                TextField("Description: ", text: $description)
+            Section(header: Text("Post Description")) {
+            TextEditor(text: $description)
             }
-            
             Button(
                 action:{}, //idk what action
                 label: {
-                    HStack{
-                    Text("Post").font(.largeTitle)
-                    Image(systemName: "arrowshape.turn.up.right.fill").font(.largeTitle).frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    }
+                    Label("Post", systemImage: "arrowshape.turn.up.right.fill")
                 }
             )
-                
         }
     }
 }
