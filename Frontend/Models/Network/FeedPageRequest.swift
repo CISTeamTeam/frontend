@@ -7,10 +7,13 @@
 
 import Foundation
 
+/// A network request for a page of posts
 struct FeedPageRequest: Encodable, Hashable {
-    let userID: ID?
+    /// A unique hash string for the current page, used to request the next page from the server
     let hash: String?
     
+    /// A JSON representation of the request
+    /// - Returns: The JSON representation
     func encoded() -> Data {
         let encoder = JSONEncoder()
         do {

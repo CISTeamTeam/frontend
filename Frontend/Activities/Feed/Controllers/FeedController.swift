@@ -35,9 +35,9 @@ class FeedController: ObservableObject, ThrowsErrors {
         
         var feedPageRequest: FeedPageRequest
         if let page = currentPage {
-            feedPageRequest = FeedPageRequest(userID: nil, hash: page.hash)
+            feedPageRequest = FeedPageRequest(hash: page.hash)
         } else {
-            feedPageRequest = FeedPageRequest(userID: nil, hash: nil)
+            feedPageRequest = FeedPageRequest(hash: nil)
         }
         
         let request = createPageRequest(feedPageRequest: feedPageRequest)

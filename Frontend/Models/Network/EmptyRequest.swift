@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// An empty network request
 struct EmptyRequest: Codable {
+    /// A JSON representation of the request
+    /// - Returns: The JSON representation
     func encoded() -> Data {
         let encoder = JSONEncoder()
         do {

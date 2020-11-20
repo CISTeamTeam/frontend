@@ -72,7 +72,7 @@ class AuthController: ObservableObject, ThrowsErrors {
             .sink { [weak self] completion in
                 self?.catchCompletionError(completion)
             } receiveValue: { status in
-                switch status {
+                switch status.status {
                 case .success:
                     self.setStatus(.ready)
                 case .failure:
@@ -88,7 +88,7 @@ class AuthController: ObservableObject, ThrowsErrors {
     private func createAuthRequest(id: ID) -> URLRequest {
         let endpoint = "authenticate"
         let url = Constants.baseURL.appendingPathComponent(endpoint)
-        let authRequest = AuthRequest(id: id)
+        let authRequest = IDRequest(id: id)
         
         var request = URLRequest(url: url)
         request.httpBody = authRequest.encoded()

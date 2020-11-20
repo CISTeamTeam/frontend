@@ -7,8 +7,12 @@
 
 import Foundation
 
+/// A representation of a page of posts
 struct FeedPage: Decodable, Hashable {
+    /// An array of IDs of posts on the page
     let posts: [ID]
+    
+    /// A unique hash string for the page, used to request the next page from the server
     let hash: String
 }
 

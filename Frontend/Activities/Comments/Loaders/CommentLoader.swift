@@ -34,7 +34,7 @@ class CommentLoader: Loader {
     }
     
     func createRequest(for key: ID) -> URLRequest {
-        let body = FetchRequest(id: key)
+        let body = IDRequest(id: key)
         let url = Constants.baseURL.appendingPathComponent(endpoint)
         
         var request = URLRequest(url: url)

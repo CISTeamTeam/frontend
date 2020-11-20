@@ -7,9 +7,13 @@
 
 import Foundation
 
+/// A network request that has an ID
 struct IDRequest: Encodable {
+    /// A unique identifier
     let id: ID
     
+    /// A JSON representation of the request
+    /// - Returns: The JSON representation
     func encoded() -> Data {
         let encoder = JSONEncoder()
         do {
