@@ -81,7 +81,6 @@
 		B99452EA2567A83D002601B2 /* PaddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99452A32567A83D002601B2 /* PaddedView.swift */; };
 		B99452EB2567A83D002601B2 /* Padding-Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99452A42567A83D002601B2 /* Padding-Default.swift */; };
 		B99452EC2567A83D002601B2 /* Modifier-Aligned.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99452A52567A83D002601B2 /* Modifier-Aligned.swift */; };
-		B99452ED2567A83D002601B2 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99452A62567A83D002601B2 /* CloseButton.swift */; };
 		B99452EE2567A83D002601B2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99452A72567A83D002601B2 /* ImagePicker.swift */; };
 		B9AA29122563F8C7002601BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA29112563F8C7002601BA /* Constants.swift */; };
 		B9AA292D256509C6002601BA /* Placeholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA292C256509C6002601BA /* Placeholders.swift */; };
@@ -179,7 +178,6 @@
 		B99452A32567A83D002601B2 /* PaddedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedView.swift; sourceTree = "<group>"; };
 		B99452A42567A83D002601B2 /* Padding-Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Padding-Default.swift"; sourceTree = "<group>"; };
 		B99452A52567A83D002601B2 /* Modifier-Aligned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Modifier-Aligned.swift"; sourceTree = "<group>"; };
-		B99452A62567A83D002601B2 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		B99452A72567A83D002601B2 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B9AA29112563F8C7002601BA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B9AA292C256509C6002601BA /* Placeholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholders.swift; sourceTree = "<group>"; };
@@ -220,9 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				B99452442567A83D002601B2 /* ErrorHandling */,
-				B99452472567A83D002601B2 /* Loader.swift */,
-				B99452482567A83D002601B2 /* Loadable.swift */,
 				B99452492567A83D002601B2 /* Load.swift */,
+				B99452482567A83D002601B2 /* Loadable.swift */,
+				B99452472567A83D002601B2 /* Loader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -239,15 +237,15 @@
 		B994524A2567A83D002601B2 /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				B994524B2567A83D002601B2 /* Comments */,
-				B99452542567A83D002601B2 /* Posts */,
 				B994525F2567A83D002601B2 /* Auth */,
-				B99452672567A83D002601B2 /* PointsAndDiscounts */,
 				B99452722567A83D002601B2 /* Challenges */,
-				B994527A2567A83D002601B2 /* Search */,
+				B994524B2567A83D002601B2 /* Comments */,
 				B994527E2567A83D002601B2 /* Feed */,
-				B99452832567A83D002601B2 /* Users */,
 				B99452902567A83D002601B2 /* NewPost */,
+				B994527A2567A83D002601B2 /* Search */,
+				B99452672567A83D002601B2 /* PointsAndDiscounts */,
+				B99452542567A83D002601B2 /* Posts */,
+				B99452832567A83D002601B2 /* Users */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -512,11 +510,10 @@
 		B99452A22567A83D002601B2 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				B99452A72567A83D002601B2 /* ImagePicker.swift */,
 				B99452A32567A83D002601B2 /* PaddedView.swift */,
 				B99452A42567A83D002601B2 /* Padding-Default.swift */,
 				B99452A52567A83D002601B2 /* Modifier-Aligned.swift */,
-				B99452A62567A83D002601B2 /* CloseButton.swift */,
-				B99452A72567A83D002601B2 /* ImagePicker.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -688,7 +685,6 @@
 				B99452E92567A83D002601B2 /* UserPoints.swift in Sources */,
 				B99452B42567A83D002601B2 /* PostImage.swift in Sources */,
 				B99452AD2567A83D002601B2 /* CommentListStandalone.swift in Sources */,
-				B99452ED2567A83D002601B2 /* CloseButton.swift in Sources */,
 				B99452E62567A83D002601B2 /* User.swift in Sources */,
 				B99452A82567A83D002601B2 /* ThrowsErrors.swift in Sources */,
 				B99452CF2567A83D002601B2 /* Search.swift in Sources */,
