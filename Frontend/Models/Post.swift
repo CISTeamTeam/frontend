@@ -13,7 +13,7 @@ struct Post: Codable, Hashable, Identifiable {
     let id: ID
     
     /// The ID of the user who created the post
-    let authorID: ID
+    let userID: ID
     
     /// The description of the post
     var description: String

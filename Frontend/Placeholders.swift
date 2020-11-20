@@ -171,7 +171,7 @@ enum Placeholders {
     static var posts = Set<Post>([
         Post(
             id: "61bede89-8de3-42d4-9cc8-351f57ded067",
-            authorID: "c28e6c3e-d720-482b-8062-ebb82798c600",
+            userID: "c28e6c3e-d720-482b-8062-ebb82798c600",
             description: "A cool tree I saw in the park!",
             url: URL(string: "https://i.imgur.com/O7rGk72.jpg")!,
             comments: [
@@ -180,7 +180,7 @@ enum Placeholders {
         ),
         Post(
             id: "f5cc5eb5-8049-47c6-89f8-2522878c8d21",
-            authorID: "d2db228e-5d9d-4479-b81a-a9521ff5c63e",
+            userID: "d2db228e-5d9d-4479-b81a-a9521ff5c63e",
             description: "My favourite picture from when I saw Rhinos on the safari! They are critically endangered, help raise awareness!",
             url: URL(string: "https://i.imgur.com/2Ajto84.jpg")!,
             comments: [
@@ -189,7 +189,7 @@ enum Placeholders {
         ),
         Post(
             id: "a1fd730e-0b87-451a-8163-602050920f42",
-            authorID: "9c01220d-4acb-4282-b0b7-306fb2b9f9b1",
+            userID: "9c01220d-4acb-4282-b0b7-306fb2b9f9b1",
             description: "Save the trees! This beautiful environment is ours to protect!",
             url: URL(string: "https://i.imgur.com/EvyTu8g.jpg")!,
             comments: [
@@ -198,7 +198,7 @@ enum Placeholders {
         ),
         Post(
             id: "ccf509b2-b26a-4f75-bddc-9e7946e33ae1",
-            authorID: "d2db228e-5d9d-4479-b81a-a9521ff5c63e",
+            userID: "d2db228e-5d9d-4479-b81a-a9521ff5c63e",
             description: "Amazing! Spend a day cleaning up the park!",
             url: URL(string: "https://i.imgur.com/h01eqLK.jpg")!,
             comments: [
@@ -207,7 +207,7 @@ enum Placeholders {
         ),
         Post(
             id: "8eddb1f2-ca65-49c7-b606-81eaef2fe8b1",
-            authorID: "c28e6c3e-d720-482b-8062-ebb82798c600",
+            userID: "c28e6c3e-d720-482b-8062-ebb82798c600",
             description: "People litter the weirdest things! #StopLittering",
             url: URL(string: "https://i.imgur.com/Wzm1H5Q.jpg")!,
             comments: [
@@ -216,7 +216,7 @@ enum Placeholders {
         ),
         Post(
             id: "ce7c9791-345a-4ac0-96c4-2a961db6f772",
-            authorID: "d2db228e-5d9d-4479-b81a-a9521ff5c63e",
+            userID: "d2db228e-5d9d-4479-b81a-a9521ff5c63e",
             description: "This place is so pretty! Wish we had more places where there are trees and nature",
             url: URL(string: "https://i.imgur.com/O8n6mRe.jpg")!,
             comments: [
@@ -225,7 +225,7 @@ enum Placeholders {
         ),
         Post(
             id: "20ae1c0a-89ee-4baa-894d-cec51891f2e8",
-            authorID: "9c01220d-4acb-4282-b0b7-306fb2b9f9b1",
+            userID: "9c01220d-4acb-4282-b0b7-306fb2b9f9b1",
             description: "So serene! If we keep polluting our waters we won't have places like this anymore!!",
             url: URL(string: "https://i.imgur.com/SYdO76t.jpg")!,
             comments: [
@@ -234,7 +234,7 @@ enum Placeholders {
         ),
         Post(
             id: "87956988-c452-4493-9c0e-fd658cd3eb84",
-            authorID: "c28e6c3e-d720-482b-8062-ebb82798c600",
+            userID: "c28e6c3e-d720-482b-8062-ebb82798c600",
             description: "Been giving my old toys to charity #ReduceReuseRecycle",
             url: URL(string: "https://i.imgur.com/DMBzDsm.jpg")!,
             comments: [
@@ -243,7 +243,7 @@ enum Placeholders {
         ),
         Post(
             id: "4a35c2e6-089d-4d2e-83ed-86c57cea5b67",
-            authorID: "9c01220d-4acb-4282-b0b7-306fb2b9f9b1",
+            userID: "9c01220d-4acb-4282-b0b7-306fb2b9f9b1",
             description: "Starting the Sakura Project! Planting beautiful Sakura trees all over Japan to keep things beautiful and greener!",
             url: URL(string: "https://i.imgur.com/cpeoAgV.jpg")!,
             comments: [

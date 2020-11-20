@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// A view showing the first comment on a post
+/// A view that shows the first comment on a post
 struct CommentListPreview: View {
     /// The ID of the post
     let postID: ID
@@ -32,8 +32,8 @@ struct CommentListPreview: View {
     
     /// A button to see all the comments on the post
     private var moreComments: some View {
-        NavigationLink(destination: CommentListStandalone(postID: postID, commentIDs: commentIDs)) {
-            Text("See all comments...")
+        NavigationLink(destination: CommentListScreen(postID: postID, commentIDs: commentIDs)) {
+            Text(Constants.seeAllCommentsButtonText)
         }
         .alignedHorizontally(to: .leading)
     }

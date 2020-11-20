@@ -7,30 +7,32 @@
 
 import SwiftUI
 
+/// A view that shows a Continue with Snapchat Button
 struct LogInWithSnapchatButton: View {
+    
+    /// An action to run when the button is clicked
     var action: () -> Void
     
+    /// The Snapchat official brand color
     private let snapchatBrandColor = Color(red: 255 / 255, green: 252 / 255, blue: 0)
     
+    /// The contents of the view
     var body: some View {
         Button(action: action) {
-            contents
+            HStack {
+                ghostLogo
+                label
+            }
+            .padding(10)
+            .padding([.top, .bottom], 5)
+            .frame(maxWidth: .infinity)
+            .background(snapchatBrandColor)
+            .cornerRadius(15)
         }
         .foregroundColor(.black)
     }
     
-    private var contents: some View {
-        HStack {
-            ghostLogo
-            label
-        }
-        .padding(10)
-        .padding([.top, .bottom], 5)
-        .frame(maxWidth: .infinity)
-        .background(snapchatBrandColor)
-        .cornerRadius(15)
-    }
-    
+    /// The Snapchat logo
     private var ghostLogo: some View {
         Image("snapchat-ghost")
             .resizable()
@@ -38,13 +40,13 @@ struct LogInWithSnapchatButton: View {
             .frame(maxWidth: 30)
     }
     
+    /// The button label
     private var label: some View {
-        Text("Continue with Snapchat")
+        Text(Constants.snapchatButtonText)
             .font(.title2)
             .fontWeight(.semibold)
     }
 }
-
 
 struct LogInWithSnapchatButton_Previews: PreviewProvider {
     static var previews: some View {

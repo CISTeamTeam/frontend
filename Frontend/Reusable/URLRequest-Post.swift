@@ -9,13 +9,13 @@ import Foundation
 
 extension URLRequest {
     /// The name of the HTTP content type header
-    static let contentTypeHeader = "Content-Type"
+    private static let contentTypeHeader = "Content-Type"
     
     /// The name of the JSON content type
-    static let contentTypeJSON = "application/json"
+    private static let contentTypeJSON = "application/json"
     
     /// The name of the HTTP POST method
-    static let postMethod = "POST"
+    private static let postMethod = "POST"
     
     /// Creates a POST URL request with a JSON body
     /// - Parameters:
@@ -30,8 +30,8 @@ extension URLRequest {
         var request = URLRequest(url: url)
         request.httpBody = encodedBody
         
-        request.httpMethod = Constants.postMethod
-        request.addValue(Constants.contentTypeJSON, forHTTPHeaderField: Constants.contentTypeHeader)
+        request.httpMethod = postMethod
+        request.addValue(contentTypeJSON, forHTTPHeaderField: contentTypeHeader)
         
         return request
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// A view showing a comment and its author
+/// A view that shows a comment and its author
 struct CommentInfo: View {
     /// The comment to show
     let comment: Comment

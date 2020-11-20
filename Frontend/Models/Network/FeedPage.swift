@@ -15,4 +15,3 @@ struct FeedPage: Decodable, Hashable {
     /// A unique hash string for the page, used to request the next page from the server
     let hash: String
 }
-

@@ -8,11 +8,16 @@
 import Combine
 import Foundation
 
+/// A controller that manages the post feed
 class FeedController: ObservableObject, ThrowsErrors {
     
+    /// IDs of posts for the feed
     @Published var postIDs = [ID]()
+    
+    /// An error, if one occurred
     @Published var error: IdentifiableError?
     
+    /// The last loaded feed page
     private var currentPage: FeedPage? {
         didSet {
             guard let page = currentPage else { return }
@@ -23,24 +28,21 @@ class FeedController: ObservableObject, ThrowsErrors {
     /// The endpoint for the loader
     private let endpoint = "getPosts"
     
+    /// Ongoing tasks
     private var cancellables = Set<AnyCancellable>()
     
+    /// Whether the controller is currently loading a page
     private var isLoadingPage = false
     
-    /// Requests the object for a key to be loaded
-    /// - Parameter key: The key identifying the object
+    
+    /// Loads the next page
     func loadMore() {
         guard !isLoadingPage else { return }
         isLoadingPage = true
         
-        var feedPageRequest: FeedPageRequest
-        if let page = currentPage {
-            feedPageRequest = FeedPageRequest(hash: page.hash)
-        } else {
-            feedPageRequest = FeedPageRequest(hash: nil)
-        }
-        
-        let request = createPageRequest(feedPageRequest: feedPageRequest)
+        let url = Constants.baseURL.appendingPathComponent(endpoint)
+        let feedPageRequest = FeedPageRequest(hash: currentPage?.hash)
+        let request = URLRequest.postRequest(url: url, body: feedPageRequest)
         
         URLSession.shared
             .dataTaskPublisher(for: request)
@@ -64,60 +66,12 @@ class FeedController: ObservableObject, ThrowsErrors {
         cancellables = []
     }
     
-    // MARK: - Read Posts
-    
-    func markAsRead(_ postID: ID) {
-        postIDs.removeAll { $0 == postID }
-        
-        let request = createMarkAsReadRequest(postID: postID)
-        URLSession.shared
-            .dataTaskPublisher(for: request)
-            .retry(1)
-            .map {
-                $0.data
-            }
-            .decode(type: StatusResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                self?.catchCompletionError(completion)
-            } receiveValue: { status in
-                return
-            }
-            .store(in: &cancellables)
-    }
-    
-    // MARK: - URL Requests
-    
-    private func createPageRequest(feedPageRequest: FeedPageRequest) -> URLRequest {
-        let url = Constants.baseURL.appendingPathComponent(endpoint)
-        
-        var request = URLRequest(url: url)
-        request.httpBody = feedPageRequest.encoded()
-        
-        request.httpMethod = Constants.postMethod
-        request.addValue(Constants.contentTypeJSON, forHTTPHeaderField: Constants.contentTypeHeader)
-        
-        return request
-    }
-    
-    private func createMarkAsReadRequest(postID: ID) -> URLRequest {
-        let endpoint = "readPost"
-        let body = IDRequest(id: postID)
-        let url = Constants.baseURL.appendingPathComponent(endpoint)
-        
-        var request = URLRequest(url: url)
-        request.httpBody = body.encoded()
-        
-        request.httpMethod = Constants.postMethod
-        request.addValue(Constants.contentTypeJSON, forHTTPHeaderField: Constants.contentTypeHeader)
-        
-        return request
-    }
-    
     // MARK: - Singleton
     
+    /// Shared feed controller
     static let shared = FeedController()
     
+    /// Private initializer
     private init() {
         loadMore()
     }

@@ -49,19 +49,21 @@ extension Loader {
         guard !loadPlaceholderIfAvailable(for: key) else { return }
         
         let request = createRequest(for: key)
-        print("LOADERREQ", String(data: request.httpBody!, encoding: .utf8)!)
-        print(request.debugDescription)
+        print("REQU", request.url, String(data: request.httpBody!, encoding: .utf8)!)
         
         cancellable = URLSession.shared
             .dataTaskPublisher(for: request)
             .retry(1)
             .map {
-                print(String(data: $0.data, encoding: .utf8)!)
+                print("RESP", request.url, String(data: $0.data, encoding: .utf8)!)
                 return $0.data
             }
             .decode(type: Object.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
+                if Object.self == User.self, case .failure = completion {
+                    UserDefaults.standard.set(nil, forKey: Constants.signedInUserIDKey)
+                }
                 self?.catchCompletionError(completion)
             } receiveValue: { [weak self] object in
                 self?.object = object

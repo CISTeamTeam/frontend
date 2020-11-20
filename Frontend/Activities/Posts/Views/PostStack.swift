@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+/// A view that shows a stack of posts
 struct PostStack: View {
+    /// An array of post IDs
     let postIDs: [ID]
     
+    /// The contents of the view
     var body: some View {
         LazyVStack {
             ForEach(postIDs, id: \.self) { postID in

@@ -28,6 +28,10 @@ protocol Loadable: View {
 
 extension Loadable {
     var body: some View {
+        loaderView
+    }
+    
+    var loaderView: some View {
         Load(with: loader, key: key, content: body)
     }
 }

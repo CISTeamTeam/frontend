@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// A view that allows a user to post a comment on a post
+/// A view to post a comment on a post
 struct NewComment: View {
     /// The ID of the currently signed in user
     @AppStorage(Constants.signedInUserIDKey) var signedInUserID: ID?
@@ -28,12 +28,13 @@ struct NewComment: View {
     var body: some View {
         VStack {
             Divider()
-            TextField("Add a comment...", text: $text)
+            TextField(Constants.postCommentPlaceholder, text: $text)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            Button("Post", action: post)
+            Button(Constants.post, action: post)
                 .alignedHorizontally(to: .trailing)
                 .padding(4)
         }
+        .alert(errorBinding: $poster.error)
         .alert(isPresented: $isSignInRequiredAlertPresented) {
             Alert(title: Text("Sign In Required"), message: Text("Sign in in the Profile tab, then try again."))
         }

@@ -26,6 +26,7 @@ extension Poster {
     /// Posts some content.
     /// - Parameter content: The content to post
     func post(_ content: Content) {
+        isLoading = true
         let request = createRequest(for: content)
         cancellable = URLSession.shared
             .dataTaskPublisher(for: request)

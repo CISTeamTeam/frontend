@@ -7,16 +7,26 @@
 
 import SwiftUI
 
+/// A view that shows information about a challenge
 struct ChallengeScreen: View {
+    /// The challenge
     let challenge: Challenge
     
+    /// The contents of the view
     var body: some View {
-        ScrollView{
-            ChallengeImage(challenge: challenge)
-            Text(challenge.description).font(.title3).padding()
-            Text("Reward: " + String(challenge.rewardPoints) + " Points").fontWeight(.light).padding(.bottom)
-            Divider()
-        }.navigationTitle(challenge.name)
+        ScrollView {
+            VStack(spacing: 10) {
+                ChallengeImage(challenge: challenge)
+                Text(challenge.description)
+                    .font(.title3)
+                    .defaultPadding()
+                    .alignedHorizontally(to: .leading)
+                Text("Win " + String(challenge.rewardPoints) + " points!")
+                    .font(.title2)
+                    .fontWeight(.bold)
+            }
+        }
+        .navigationTitle(challenge.name)
     }
 }
 

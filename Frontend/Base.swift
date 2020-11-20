@@ -7,29 +7,31 @@
 
 import SwiftUI
 
+/// The base view for the app
 struct Base: View {
+    /// The main tab bar
     var body: some View {
         TabView {
-            Feed(postIDs: Placeholders.posts.map(\.id))
+            FeedTab(postIDs: Placeholders.posts.map(\.id))
                 .tabItem {
                     Image(systemName: "leaf.fill")
                     Text("For You")
                 }
-            ChallengeList(challengeIDs: Placeholders.challenges.map(\.id))
+            ChallengesTab()
                 .tabItem {
                     Image(systemName: "lightbulb.fill")
-                    Text("Challenges")
+                    Text(Constants.challenges)
                 }
             NewPost()
                 .tabItem {
                     Image(systemName: "plus")
                 }
-            PointsDiscounts(userID: Placeholders.aUser.id)
+            DiscountsTab()
                 .tabItem {
                     Image(systemName: "ticket.fill")
-                    Text("Discounts")
+                    Text(Constants.discounts)
                 }
-            SelfProfile()
+            ProfileTab()
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")

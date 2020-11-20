@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// A view showing all of the comments on a post
+/// A view that shows all of the comments on a post
 struct CommentList: View {
     /// The ID of the post
     let postID: ID

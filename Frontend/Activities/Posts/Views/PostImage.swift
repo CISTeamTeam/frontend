@@ -8,19 +8,19 @@
 import SDWebImageSwiftUI
 import SwiftUI
 
+/// A view that shows a tappable image for a post, which brings the user to the info for a post
 struct PostImage: View {
+    /// The post
     let post: Post
     
+    /// The contents of the view
     var body: some View {
-        NavigationLink(
-            destination: PostScreen(postID: post.id),
-            label: {
-                WebImage(url: post.url)
-                    .resizable()
-                    .indicator(.activity)
-                    .aspectRatio(contentMode: .fit)
-            })
-            .alignedHorizontally(to: .leading)
+        NavigationLink(destination: PostScreen(postID: post.id)) {
+            WebImage(url: post.url)
+                .resizable()
+                .indicator(.activity)
+        }
+        .alignedHorizontally(to: .leading)
     }
 }
 

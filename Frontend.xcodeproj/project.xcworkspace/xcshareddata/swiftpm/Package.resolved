@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ImgurAnonymousAPI",
+        "repositoryURL": "https://github.com/nolanw/ImgurAnonymousAPI",
+        "state": {
+          "branch": "master",
+          "revision": "9c4a06b6daf4cad2422976349b7d190693f87813",
+          "version": null
+        }
+      },
+      {
         "package": "SDWebImage",
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {

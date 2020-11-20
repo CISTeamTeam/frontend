@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+/// A view that shows the description for a post
 struct PostDescription: View {
+    /// The post
     let post: Post
     
+    /// The contents of the view
     var body: some View {
         Text(post.description)
             .alignedHorizontally(to: .leading)

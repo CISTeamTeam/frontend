@@ -1,5 +1,5 @@
 //
-//  Feed.swift
+//  FeedTab.swift
 //  Frontend
 //
 //  Created by Julian Schiavo on 15/11/2020.
@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct Feed: View {
-    
+/// A view that shows a feed of posts
+struct FeedTab: View {
+    /// The IDs of the posts (optional, overrides the default loading behaviour)
     var postIDs: [ID]?
     
+    /// Controller used to load the feed
     @ObservedObject private var controller = FeedController.shared
     
+    /// The contents of the view
     var body: some View {
         NavigationView {
             ScrollView {
@@ -23,15 +26,18 @@ struct Feed: View {
                     }
                 }
             }
-            .navigationTitle("Canopy")
+            .onAppear {
+                controller.loadMore()
+            }
+            .navigationTitle(Constants.appName)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
     
 
-struct Feed_Previews: PreviewProvider {
+struct FeedTab_Previews: PreviewProvider {
     static var previews: some View {
-        Feed(postIDs: Placeholders.posts.map(\.id))
+        FeedTab(postIDs: Placeholders.posts.map(\.id))
     }
 }

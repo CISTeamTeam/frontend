@@ -12,13 +12,15 @@ extension String: Identifiable {
     public var id: String { self }
 }
 
+/// A view that handles authenticating and signing in
 struct AuthView: View {
-    @Environment(\.presentationMode) private var presentationMode
     
+    /// The controller used for authentication
     @ObservedObject private var authController = AuthController.shared
     
+    /// The contents of the view
     var body: some View {
-        PaddedView(title: "Welcome to Canopy") {
+        PaddedView(title: Constants.signInTitle) {
             VStack(alignment: .leading) {
                 Spacer()
                 signInWithAppleButton
@@ -32,6 +34,7 @@ struct AuthView: View {
         }
     }
     
+    /// Sign In With Apple Button
     private var signInWithAppleButton: some View {
         SignInWithAppleButton(.continue) { request in
             authController.startWithApple(request: request)
@@ -48,6 +51,7 @@ struct AuthView: View {
         .frame(height: 60)
     }
     
+    /// Log In With Snapchat Button
     private var logInWithSnapchatButton: some View {
         LogInWithSnapchatButton {
             self.authController.startWithSnapchat()

@@ -1,5 +1,5 @@
 //
-//  CommentPoster.swift
+//  PostRater.swift
 //  Frontend
 //
 //  Created by Julian Schiavo on 20/11/2020.
@@ -8,8 +8,8 @@
 import Combine
 import Foundation
 
-/// A poster that posts comments
-class CommentPoster: Poster {
+/// A poster that rates posts
+class PostRater: Poster {
     
     /// Whether a request is currently in progress.
     @Published var isLoading = false
@@ -21,7 +21,7 @@ class CommentPoster: Poster {
     var cancellable: AnyCancellable?
     
     /// The endpoint for the poster
-    private let endpoint = "postComment"
+    private let endpoint = "ratePost"
     
     init() { }
     
@@ -29,11 +29,11 @@ class CommentPoster: Poster {
         cancel()
     }
     
-    /// Creates a `URLRequest` used to post some content
-    /// - Parameter comment: The comment to post
+    /// Creates a `URLRequest` used to rate a post
+    /// - Parameter rating: The rating
     /// - Returns: A URL request
-    func createRequest(for comment: Comment) -> URLRequest {
+    func createRequest(for rating: PostRating) -> URLRequest {
         let url = Constants.baseURL.appendingPathComponent(endpoint)
-        return .postRequest(url: url, body: comment)
+        return .postRequest(url: url, body: rating)
     }
 }

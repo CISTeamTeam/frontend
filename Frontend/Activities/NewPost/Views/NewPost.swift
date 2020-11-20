@@ -5,43 +5,62 @@
 //  Created by Julian Schiavo on 15/11/2020.
 //
 
+import ImgurAnonymousAPI
 import SwiftUI
 
+/// A view that allows the user to create a new post
 struct NewPost: View {
+    /// The ID of the currently signed in user
+    @AppStorage(Constants.signedInUserIDKey) var signedInUserID: ID?
+    
+    /// The currently selected image
     @State private var image: UIImage?
     
-    @State private var isImageSheetPresented = false
-    
+    /// The post's description
     @State private var description = ""
     
+    /// Whether the sign in required alert is currently shown
+    @State private var isSignInRequiredAlertPresented = false
+    
+    /// A poster that posts posts
+    @StateObject private var poster = PostPoster()
+    
+    /// The contents of the view
     var body: some View {
-        Form {
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    
-            }
-            Button(action: { self.isImageSheetPresented.toggle() }, label: {
-                HStack{
-                    Image(systemName: "square.and.arrow.up").frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    Text("Upload Image")
+        NavigationView {
+            Form {
+                NewPostImage(image: $image)
+                NewPostDescription(text: $description)
+                Button(action: post) {
+                    Label(Constants.post, systemImage: "tray.and.arrow.up.fill")
                 }
-            })
-            .sheet(isPresented: $isImageSheetPresented, content: {
-                ImagePicker(image: $image)
-            })
-            Section(header: Text("Post Description")) {
-            TextEditor(text: $description)
+                .disabled(image == nil || description.isEmpty)
             }
-            Button(
-                action:{}, //idk what action
-                label: {
-                    Label("Post", systemImage: "arrowshape.turn.up.right.fill")
-                }
-            )
+            .navigationTitle(Constants.newPost)
+            .alert(isPresented: $isSignInRequiredAlertPresented) {
+                Alert(title: Text("Sign In Required"), message: Text("Sign in in the Profile tab, then try again."))
+            }
+            .fullScreenCover(isPresented: $poster.isLoading, content: LoadingOverlay.init)
         }
+        .alert(errorBinding: $poster.error)
+    }
+    
+    /// Posts the post
+    private func post() {
+        hideKeyboard()
+        
+        guard let userID = signedInUserID else {
+            isSignInRequiredAlertPresented.toggle()
+            return
+        }
+        
+        guard let image = image else { return }
+        
+        let post = Post(id: UUID().uuidString, userID: userID, description: description, url: .init(fileURLWithPath: ""), comments: [])
+        poster.post(post, image: image)
+        
+        self.image = nil
+        description = ""
     }
 }
 

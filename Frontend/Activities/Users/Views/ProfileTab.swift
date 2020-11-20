@@ -1,5 +1,5 @@
 //
-//  SelfProfile.swift
+//  ProfileTab.swift
 //  Frontend
 //
 //  Created by Julian Schiavo on 19/11/2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelfProfile: View {
+struct ProfileTab: View {
     @AppStorage(Constants.signedInUserIDKey) var signedInUserID: ID?
     
     var body: some View {
@@ -21,8 +21,8 @@ struct SelfProfile: View {
     }
 }
 
-struct SelfProfile_Previews: PreviewProvider {
+struct ProfileTab_Previews: PreviewProvider {
     static var previews: some View {
-        SelfProfile()
+        ProfileTab()
     }
 }

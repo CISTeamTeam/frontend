@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+/// A view that shows a post, intended to be used as a top-level view inside a `NavigationView`
 struct PostScreen: View {
+    /// The ID of the post
     let postID: ID
     
+    /// The contents of the view
     var body: some View {
         ScrollView {
             PostView(postID: postID)
         }
-        .navigationTitle("Post")
+        .navigationTitle(Constants.post)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
