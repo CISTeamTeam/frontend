@@ -31,6 +31,9 @@ struct NewPost: View {
             Form {
                 NewPostImage(image: $image)
                 NewPostDescription(text: $description)
+                
+                NewPostChallengePicker()
+                
                 Button(action: post) {
                     Label(Constants.post, systemImage: "tray.and.arrow.up.fill")
                 }

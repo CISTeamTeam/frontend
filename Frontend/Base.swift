@@ -22,10 +22,6 @@ struct Base: View {
                     Image(systemName: "lightbulb.fill")
                     Text(Constants.challenges)
                 }
-            NewPost()
-                .tabItem {
-                    Image(systemName: "plus")
-                }
             DiscountsTab()
                 .tabItem {
                     Image(systemName: "ticket.fill")
@@ -35,6 +31,10 @@ struct Base: View {
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
+                }
+            NewPost()
+                .tabItem {
+                    Image(systemName: "plus")
                 }
         }
     }

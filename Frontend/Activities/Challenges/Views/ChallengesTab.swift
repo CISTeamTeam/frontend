@@ -10,10 +10,10 @@ import SwiftUI
 /// A view that shows all of the current challenges
 struct ChallengesTab: View, Loadable {
     
-    /// The key used to load all discounts
+    /// The key used to load all Challenges
     var key: Bool { false }
     
-    /// The loader used to load all discounts
+    /// The loader used to load all Challenges
     @ObservedObject var loader = AllChallengesLoader.main
     
     /// Creates the contents of the view

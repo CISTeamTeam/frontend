@@ -26,4 +26,7 @@ struct Post: Codable, Hashable, Identifiable {
     
     /// An array of IDs of comments on the post
     var comments: [ID]
+    
+    /// The challenge the post entered in (optional)
+    var challengeID: ID?
 }
