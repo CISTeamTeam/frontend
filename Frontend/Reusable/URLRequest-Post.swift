@@ -23,9 +23,7 @@ extension URLRequest {
     ///   - body: The body for the request
     /// - Returns: The request
     static func postRequest<T: Encodable>(url: URL, body: T) -> URLRequest {
-        let jsonEncoder = JSONEncoder()
-        let encodedBody = (try? jsonEncoder.encode(body)) ?? Data()
-        print(String(data: encodedBody, encoding: .utf8)!)
+        let encodedBody = (try? JSONEncoder.default.encode(body)) ?? Data()
         
         var request = URLRequest(url: url)
         request.httpBody = encodedBody

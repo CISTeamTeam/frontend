@@ -2,8 +2,6 @@
 //  NewComment.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 20/11/2020.
-//
 
 import SwiftUI
 
@@ -16,7 +14,7 @@ struct NewComment: View {
     let postID: ID
     
     /// The comment text
-    @State private var text = ""
+    @State private var text = "Comment on sustainability"
     
     /// Whether the sign in required alert is currently shown
     @State private var isSignInRequiredAlertPresented = false
@@ -29,7 +27,7 @@ struct NewComment: View {
         VStack {
             Divider()
             TextField(Constants.postCommentPlaceholder, text: $text)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle()).disabled(true)
             Button(Constants.post, action: post)
                 .alignedHorizontally(to: .trailing)
                 .padding(4)

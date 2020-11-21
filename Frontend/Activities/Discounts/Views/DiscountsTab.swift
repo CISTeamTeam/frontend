@@ -2,8 +2,6 @@
 //  DiscountsTab.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 20/11/2020.
-//
 
 import SwiftUI
 
@@ -15,10 +13,8 @@ struct DiscountsTab: View {
     /// The contents of the view
     var body: some View {
         NavigationView {
-            if let id = signedInUserID ?? Placeholders.aUser.id {
-                PaddedView(title: Constants.discounts) {
-                    Discounts(userID: id)
-                }
+            if let id = signedInUserID {
+                Discounts(userID: id)
             } else {
                 AuthView()
             }

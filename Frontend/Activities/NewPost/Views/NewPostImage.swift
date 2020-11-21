@@ -2,8 +2,6 @@
 //  NewPostImage.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 20/11/2020.
-//
 
 import SwiftUI
 
@@ -18,13 +16,17 @@ struct NewPostImage: View {
     /// The contents of the view
     var body: some View {
         Group {
-            preview
-            Button(action: showPicker) {
-                Label(Constants.selectImageButtonText, systemImage: "photo.fill")
+            Section {
+                preview
             }
-        }
-        .sheet(isPresented: $isPickerPresented) {
-            ImagePicker(image: $image)
+            Section {
+                Button(action: showPicker) {
+                    Label(Constants.selectImageButtonText, systemImage: "photo.fill")
+                }
+                .sheet(isPresented: $isPickerPresented) {
+                    ImagePicker(image: $image)
+                }
+            }
         }
     }
     

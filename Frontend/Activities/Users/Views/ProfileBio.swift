@@ -2,14 +2,15 @@
 //  ProfileBio.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import SwiftUI
 
+/// A view that shows a user's bio
 struct ProfileBio: View {
+    /// The user
     let user: User
     
+    /// The contents of the view
     var body: some View {
         Text(user.bio)
             .alignedHorizontally(to: .leading)

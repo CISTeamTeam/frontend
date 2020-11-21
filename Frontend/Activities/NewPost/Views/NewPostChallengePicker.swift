@@ -2,52 +2,45 @@
 //  NewPostChallengePicker.swift
 //  Frontend
 //
-//  Created by Maximilian Mang Yu Ta on 21/11/2020.
-//
 
 import SwiftUI
 
+/// A view that allows entering a post in a challenge
 struct NewPostChallengePicker: View, Loadable {
-    @State private var displayArray = ["None"]
-    @State private var selection = 0
-    @State private var pickerVisible = false
+    /// The currently selected challenge, if one is selected
+    @Binding var challenge: Challenge?
     
-    var key: Bool { false }
+    /// The key used to load all challenges
+    var key: Bool { true }
     
+    /// The loader used to load all challenges
     @ObservedObject var loader = AllChallengesLoader.main
     
+    /// The contents of the view whether loaded or not
+    var body: some View {
+        Section(header: Text(Constants.challengePickerTitle),
+                footer: Text(Constants.challengePickerDescription)) {
+            loaderView
+        }
+    }
     
+    /// Creates the contents of the view
+    /// - Parameter response: The network response
+    /// - Returns: The contents of the view
     func body(with response: AllChallengesLoader.Response) -> some View{
-        Section (header: Text("Challenge")) {
-            VStack{
-                HStack{
-                    Text("Enter Challenge: ")
-                    Spacer()
-                    Button((displayArray + response.challenges)[selection]){
-                        self.pickerVisible.toggle()
-                    }
-                }
-                if pickerVisible {
-                    HStack{
-                        Spacer()
-                        Picker(selection: $selection, label: Text("")){
-                            ForEach(0..<(displayArray + response.challenges).count){
-                                Text(((displayArray + response.challenges)[$0])).foregroundColor(.secondary)
-                            }
-                        }.pickerStyle(WheelPickerStyle())
-                        .onTapGesture {
-                            self.pickerVisible.toggle()
-                        }
-                        Spacer()
-                    }
-                }
+        Picker(selection: $challenge, label: Text("Select " + Constants.challengePickerTitle)) {
+            ForEach(response.challenges, id: \.self) { id in
+                ChallengeRow(challengeID: id)
+                    .id(id)
             }
+            .navigationTitle("Challenge")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 struct NewPostChallengePicker_Previews: PreviewProvider {
     static var previews: some View {
-        NewPostChallengePicker()
+        NewPostChallengePicker(challenge: .constant(nil))
     }
 }

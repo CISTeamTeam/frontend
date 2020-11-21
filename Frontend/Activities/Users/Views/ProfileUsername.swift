@@ -2,14 +2,15 @@
 //  ProfileUsername.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import SwiftUI
 
+/// A view that shows a user's username
 struct ProfileUsername: View {
+    /// The user
     let user: User
     
+    /// The contents of the view
     var body: some View {
         Text(user.username)
             .foregroundColor(.secondary)

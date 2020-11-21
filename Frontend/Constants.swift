@@ -2,15 +2,13 @@
 //  Constants.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 17/11/2020.
-//
 
 import Foundation
 
 /// Constants for the app
 enum Constants {
     /// The base URL for the server
-    static let baseURL = URL(string: "http://7f03aed3a68a.ngrok.io")!
+    static let baseURL = URL(string: "http://fatbu.dynu.net:8000")!
     
     /// App Name
     static let appName = "Canopy"
@@ -25,6 +23,9 @@ enum Constants {
     
     /// Sign In screen title
     static let signInTitle = "Welcome to Canopy"
+    
+    /// Google button text
+    static let googleButtonText = "Continue with Google"
     
     /// Snapchat button text
     static let snapchatButtonText = "Continue with Snapchat"
@@ -64,6 +65,12 @@ enum Constants {
     /// Select Image Button text
     static let selectImageButtonText = "Select Image"
     
+    /// Challenge picker title
+    static let challengePickerTitle = "Challenge"
+    
+    /// Challenge picker description
+    static let challengePickerDescription = "Select a challenge to enter your post into to have a chance of winning extra points!"
+    
     // MARK: - Posts
     
     /// Question asked for post rating
@@ -74,4 +81,7 @@ enum Constants {
             "How much has this post demonstrated environmental awareness?"
         ].randomElement()!
     }
+    
+    /// Message shown after rating
+    static let ratingThankYou = "Thank you for your contribution!"
 }

@@ -2,8 +2,6 @@
 //  ChallengeScreen.swift
 //  Frontend
 //
-//  Created by Maximilian Mang Yu Ta on 20/11/2020.
-//
 
 import SwiftUI
 

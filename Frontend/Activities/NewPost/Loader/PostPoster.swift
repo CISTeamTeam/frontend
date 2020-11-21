@@ -2,8 +2,6 @@
 //  PostPoster.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 20/11/2020.
-//
 
 import Combine
 import Foundation

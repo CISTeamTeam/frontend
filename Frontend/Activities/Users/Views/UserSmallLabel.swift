@@ -2,19 +2,24 @@
 //  UserSmallLabel.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import SwiftUI
 import SDWebImageSwiftUI
 
+/// A view that shows a label for a user
 struct UserSmallLabel: View, Loadable {
+    /// The ID of the user
     let userID: ID
     
+    /// The key used to load the user
     var key: ID { userID }
     
+    /// The loader used to load the user
     @StateObject var loader = UserLoader()
     
+    /// Creates the contents of the view
+    /// - Parameter user: The loaded user
+    /// - Returns: The contents of the view
     func body(with user: User) -> some View {
         NavigationLink(
             destination: Profile(userID: userID),
@@ -25,6 +30,9 @@ struct UserSmallLabel: View, Loadable {
             .buttonStyle(PlainButtonStyle())
     }
     
+    /// Creates the contents of the view
+    /// - Parameter user: The loaded user
+    /// - Returns: The contents of the view
     private func contents(with user: User) -> some View {
         HStack {
             UserProfilePicture(userID: user.id)

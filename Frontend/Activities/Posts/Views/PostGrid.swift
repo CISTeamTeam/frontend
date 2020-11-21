@@ -2,8 +2,6 @@
 //  PostGrid.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 17/11/2020.
-//
 
 import SwiftUI
 

@@ -2,8 +2,6 @@
 //  DiscountGrid.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import SwiftUI
 
@@ -32,6 +30,7 @@ struct DiscountGrid: View, Loadable {
             ForEach(response.discounts, id: \.self) { discountID in
                 NavigationLink(destination: DiscountScreen(discountID: discountID, userID: userID)) {
                     DiscountView(discountID: discountID)
+                        .frame(minHeight: 100)
                 }
                 .foregroundColor(.white)
             }

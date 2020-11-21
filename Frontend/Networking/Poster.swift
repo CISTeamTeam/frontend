@@ -30,11 +30,8 @@ extension Poster {
         let request = createRequest(for: content)
         cancellable = URLSession.shared
             .dataTaskPublisher(for: request)
-            .retry(1)
-            .map {
-                $0.data
-            }
-            .decode(type: StatusResponse.self, decoder: JSONDecoder())
+            .retryIfNeeded()
+            .decode(type: StatusResponse.self, decoder: JSONDecoder.default)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 if case .finished = completion {

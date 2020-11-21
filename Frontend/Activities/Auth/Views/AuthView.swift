@@ -2,8 +2,6 @@
 //  AuthView.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 19/11/2020.
-//
 
 import AuthenticationServices
 import SwiftUI
@@ -23,35 +21,24 @@ struct AuthView: View {
         PaddedView(title: Constants.signInTitle) {
             VStack(alignment: .leading) {
                 Spacer()
-                signInWithAppleButton
+                logInWithGoogleButton
                 logInWithSnapchatButton
             }
             .padding(.bottom, 30)
         }
         .alert(errorBinding: $authController.error)
-        .fullScreenCover(isPresented: $authController.isLoading) {
-            LoadingOverlay()
-        }
+        .fullScreenCover(isPresented: $authController.isLoading, content: LoadingOverlay.init)
     }
     
-    /// Sign In With Apple Button
-    private var signInWithAppleButton: some View {
-        SignInWithAppleButton(.continue) { request in
-            authController.startWithApple(request: request)
-        } onCompletion: { result in
-            switch result {
-            case let .success(authorization):
-                authController.appleAuthCompleted(with: authorization)
-            case let .failure(error):
-                authController.appleAuthFailed(with: error)
-            }
+    /// Continue with Google Button
+    private var logInWithGoogleButton: some View {
+        LogInWithGoogleButton {
+            self.authController.startWithGoogle()
         }
-        .signInWithAppleButtonStyle(.whiteOutline)
-        .cornerRadius(15)
         .frame(height: 60)
     }
     
-    /// Log In With Snapchat Button
+    /// Continue with Snapchat Button
     private var logInWithSnapchatButton: some View {
         LogInWithSnapchatButton {
             self.authController.startWithSnapchat()

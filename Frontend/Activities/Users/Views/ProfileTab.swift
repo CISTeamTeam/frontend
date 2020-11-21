@@ -2,14 +2,15 @@
 //  ProfileTab.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 19/11/2020.
-//
 
 import SwiftUI
 
+/// A view shown for the Profile tab
 struct ProfileTab: View {
+    /// The ID of the currently signed in user
     @AppStorage(Constants.signedInUserIDKey) var signedInUserID: ID?
     
+    /// The contents of the view
     var body: some View {
         NavigationView {
             if let id = signedInUserID {

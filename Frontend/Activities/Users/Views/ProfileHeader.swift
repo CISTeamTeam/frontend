@@ -2,14 +2,15 @@
 //  ProfileHeader.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 17/11/2020.
-//
 
 import SwiftUI
 
+/// A view that shows the header of a profile
 struct ProfileHeader: View {
+    /// The user
     let user: User
     
+    /// The contents of the view
     var body: some View {
         VStack {
             HStack(spacing: 20) {

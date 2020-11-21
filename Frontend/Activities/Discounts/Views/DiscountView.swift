@@ -2,8 +2,6 @@
 //  DiscountView.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import SwiftUI
 
@@ -33,7 +31,9 @@ struct DiscountView: View, Loadable {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .border(Color.primary)
+        .background(Color(.secondarySystemBackground))
+        .cornerRadius(15)
+        .padding(5)
     }
 }
 

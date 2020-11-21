@@ -2,8 +2,6 @@
 //  NewPostDescription.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 20/11/2020.
-//
 
 import SwiftUI
 
@@ -15,7 +13,7 @@ struct NewPostDescription: View {
     /// The contents of the view
     var body: some View {
         Section(header: Text("Description")) {
-            TextEditor(text: $text)
+            TextEditor(text: $text).disabled(true)
         }
     }
 }

@@ -107,6 +107,19 @@
 		B9BBF8F92567F86800FEF8B7 /* DiscountRedeemer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8F82567F86800FEF8B7 /* DiscountRedeemer.swift */; };
 		B9BBF8FB2567FC5E00FEF8B7 /* AllChallengesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8FA2567FC5E00FEF8B7 /* AllChallengesLoader.swift */; };
 		B9BBF8FD25680FDA00FEF8B7 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8FC25680FDA00FEF8B7 /* Keys.swift */; };
+		B9BBF8FF2569266A00FEF8B7 /* NewPostChallengePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF8FE2569266A00FEF8B7 /* NewPostChallengePicker.swift */; };
+		B9BBF9012569434900FEF8B7 /* URLSession-CustomRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF9002569434900FEF8B7 /* URLSession-CustomRetry.swift */; };
+		B9BBF9032569438D00FEF8B7 /* JSONEncoder-Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF9022569438D00FEF8B7 /* JSONEncoder-Shared.swift */; };
+		B9BBF905256943E500FEF8B7 /* JSONDecoder-Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF904256943E500FEF8B7 /* JSONDecoder-Shared.swift */; };
+		B9BBF9072569441400FEF8B7 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF9062569441400FEF8B7 /* ErrorResponse.swift */; };
+		B9BBF90A25694E8A00FEF8B7 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BBF90925694E8A00FEF8B7 /* LocalAuthentication.framework */; };
+		B9BBF90C25694E8F00FEF8B7 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BBF90B25694E8F00FEF8B7 /* SafariServices.framework */; };
+		B9BBF90E25694E9600FEF8B7 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BBF90D25694E9600FEF8B7 /* AuthenticationServices.framework */; };
+		B9BBF91025694EAB00FEF8B7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BBF90F25694EAB00FEF8B7 /* SystemConfiguration.framework */; };
+		B9BBF91225694FC200FEF8B7 /* LogInWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BBF91125694FC200FEF8B7 /* LogInWithGoogleButton.swift */; };
+		B9BBF9162569503400FEF8B7 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BBF9132569503400FEF8B7 /* GoogleSignInDependencies.framework */; };
+		B9BBF9172569503400FEF8B7 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B9BBF9142569503400FEF8B7 /* GoogleSignIn.bundle */; };
+		B9BBF9182569503400FEF8B7 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BBF9152569503400FEF8B7 /* GoogleSignIn.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -224,6 +237,19 @@
 		B9BBF8F82567F86800FEF8B7 /* DiscountRedeemer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountRedeemer.swift; sourceTree = "<group>"; };
 		B9BBF8FA2567FC5E00FEF8B7 /* AllChallengesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChallengesLoader.swift; sourceTree = "<group>"; };
 		B9BBF8FC25680FDA00FEF8B7 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		B9BBF8FE2569266A00FEF8B7 /* NewPostChallengePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostChallengePicker.swift; sourceTree = "<group>"; };
+		B9BBF9002569434900FEF8B7 /* URLSession-CustomRetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession-CustomRetry.swift"; sourceTree = "<group>"; };
+		B9BBF9022569438D00FEF8B7 /* JSONEncoder-Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder-Shared.swift"; sourceTree = "<group>"; };
+		B9BBF904256943E500FEF8B7 /* JSONDecoder-Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder-Shared.swift"; sourceTree = "<group>"; };
+		B9BBF9062569441400FEF8B7 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		B9BBF90925694E8A00FEF8B7 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/LocalAuthentication.framework; sourceTree = DEVELOPER_DIR; };
+		B9BBF90B25694E8F00FEF8B7 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/iOSSupport/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
+		B9BBF90D25694E9600FEF8B7 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/iOSSupport/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
+		B9BBF90F25694EAB00FEF8B7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		B9BBF91125694FC200FEF8B7 /* LogInWithGoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInWithGoogleButton.swift; sourceTree = "<group>"; };
+		B9BBF9132569503400FEF8B7 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
+		B9BBF9142569503400FEF8B7 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		B9BBF9152569503400FEF8B7 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,10 +257,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BBF91025694EAB00FEF8B7 /* SystemConfiguration.framework in Frameworks */,
+				B9BBF90E25694E9600FEF8B7 /* AuthenticationServices.framework in Frameworks */,
+				B9BBF9182569503400FEF8B7 /* GoogleSignIn.framework in Frameworks */,
+				B9BBF90C25694E8F00FEF8B7 /* SafariServices.framework in Frameworks */,
+				B9BBF90A25694E8A00FEF8B7 /* LocalAuthentication.framework in Frameworks */,
 				B994523025668805002601B2 /* SCSDKLoginKit.framework in Frameworks */,
 				B994522E25668804002601B2 /* SCSDKCreativeKit.framework in Frameworks */,
 				B98FC73A25656DA5004C8A2C /* SDWebImageSwiftUI in Frameworks */,
 				B9BBF8F32567EC1C00FEF8B7 /* ImgurAnonymousAPI in Frameworks */,
+				B9BBF9162569503400FEF8B7 /* GoogleSignInDependencies.framework in Frameworks */,
 				B994522C25668803002601B2 /* SCSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +277,9 @@
 		B98FC73B25656DD0004C8A2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9BBF9142569503400FEF8B7 /* GoogleSignIn.bundle */,
+				B9BBF9152569503400FEF8B7 /* GoogleSignIn.framework */,
+				B9BBF9132569503400FEF8B7 /* GoogleSignInDependencies.framework */,
 				B98FC73D25656DDA004C8A2C /* SCSDKCoreKit.framework */,
 				B98FC73E25656DDA004C8A2C /* SCSDKCreativeKit.framework */,
 				B98FC73C25656DD9004C8A2C /* SCSDKLoginKit.framework */,
@@ -377,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				B99452642567A83D002601B2 /* AuthView.swift */,
+				B9BBF91125694FC200FEF8B7 /* LogInWithGoogleButton.swift */,
 				B99452632567A83D002601B2 /* LogInWithSnapchatButton.swift */,
 			);
 			path = Views;
@@ -517,6 +553,7 @@
 				B99452922567A83D002601B2 /* NewPost.swift */,
 				B9BBF8E32567D2DF00FEF8B7 /* NewPostImage.swift */,
 				B9BBF8E12567D28400FEF8B7 /* NewPostDescription.swift */,
+				B9BBF8FE2569266A00FEF8B7 /* NewPostChallengePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -539,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				B994529C2567A83D002601B2 /* EmptyRequest.swift */,
+				B9BBF9062569441400FEF8B7 /* ErrorResponse.swift */,
 				B99452982567A83D002601B2 /* FeedPage.swift */,
 				B994529B2567A83D002601B2 /* FeedPageRequest.swift */,
 				B99452992567A83D002601B2 /* IDRequest.swift */,
@@ -561,6 +599,9 @@
 				B99452EF2567AF55002601B2 /* URLRequest-Post.swift */,
 				B99452F72567BB5E002601B2 /* View-ErrorAlert.swift */,
 				B9BBF8E72567D6F500FEF8B7 /* View-HideKeyboard.swift */,
+				B9BBF9002569434900FEF8B7 /* URLSession-CustomRetry.swift */,
+				B9BBF9022569438D00FEF8B7 /* JSONEncoder-Shared.swift */,
+				B9BBF904256943E500FEF8B7 /* JSONDecoder-Shared.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -570,6 +611,7 @@
 			children = (
 				B9B41D862561324C003BDB2C /* Frontend */,
 				B9B41D852561324C003BDB2C /* Products */,
+				B9BBF90825694E8900FEF8B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -616,6 +658,17 @@
 				B9BBF8E52567D4C400FEF8B7 /* PostPoster.swift */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		B9BBF90825694E8900FEF8B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9BBF90F25694EAB00FEF8B7 /* SystemConfiguration.framework */,
+				B9BBF90D25694E9600FEF8B7 /* AuthenticationServices.framework */,
+				B9BBF90B25694E8F00FEF8B7 /* SafariServices.framework */,
+				B9BBF90925694E8A00FEF8B7 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B41D8F2561324D003BDB2C /* Preview Assets.xcassets in Resources */,
+				B9BBF9172569503400FEF8B7 /* GoogleSignIn.bundle in Resources */,
 				B9B41D8C2561324D003BDB2C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,11 +764,13 @@
 				B99452F42567B4A1002601B2 /* ID.swift in Sources */,
 				B99452D02567A83D002601B2 /* FeedController.swift in Sources */,
 				B99452E32567A83D002601B2 /* FeedPageRequest.swift in Sources */,
+				B9BBF8FF2569266A00FEF8B7 /* NewPostChallengePicker.swift in Sources */,
 				B99452C72567A83D002601B2 /* AllDiscountsLoader.swift in Sources */,
 				B99452E82567A83D002601B2 /* Post.swift in Sources */,
 				B99452D92567A83D002601B2 /* UserSmallLabel.swift in Sources */,
 				B99452DD2567A83D002601B2 /* Comment.swift in Sources */,
 				B99452B12567A83D002601B2 /* CommentListPreview.swift in Sources */,
+				B9BBF9012569434900FEF8B7 /* URLSession-CustomRetry.swift in Sources */,
 				B9B41D882561324C003BDB2C /* App.swift in Sources */,
 				B99452B72567A83D002601B2 /* PostStack.swift in Sources */,
 				B99452C92567A83D002601B2 /* ChallengeImage.swift in Sources */,
@@ -729,8 +785,10 @@
 				B99452B82567A83D002601B2 /* PostView.swift in Sources */,
 				B99452EE2567A83D002601B2 /* ImagePicker.swift in Sources */,
 				B99452B52567A83D002601B2 /* PostDescription.swift in Sources */,
+				B9BBF9072569441400FEF8B7 /* ErrorResponse.swift in Sources */,
 				B9BBF8E22567D28400FEF8B7 /* NewPostDescription.swift in Sources */,
 				B99452BA2567A83D002601B2 /* PostLoader.swift in Sources */,
+				B9BBF905256943E500FEF8B7 /* JSONDecoder-Shared.swift in Sources */,
 				B99452C62567A83D002601B2 /* DiscountLoader.swift in Sources */,
 				B99452C42567A83D002601B2 /* DiscountView.swift in Sources */,
 				B99452AC2567A83D002601B2 /* Load.swift in Sources */,
@@ -758,9 +816,11 @@
 				B99452E62567A83D002601B2 /* User.swift in Sources */,
 				B99452FC2567C50C002601B2 /* CommentPoster.swift in Sources */,
 				B9BBF8F02567DD8400FEF8B7 /* PostRating.swift in Sources */,
+				B9BBF91225694FC200FEF8B7 /* LogInWithGoogleButton.swift in Sources */,
 				B99452A82567A83D002601B2 /* ThrowsErrors.swift in Sources */,
 				B9BBF8F72567F58200FEF8B7 /* DiscountsTab.swift in Sources */,
 				B99452DB2567A83D002601B2 /* UserLoader.swift in Sources */,
+				B9BBF9032569438D00FEF8B7 /* JSONEncoder-Shared.swift in Sources */,
 				B99452CC2567A83D002601B2 /* ChallengeLoader.swift in Sources */,
 				B99452DC2567A83D002601B2 /* NewPost.swift in Sources */,
 				B99452E22567A83D002601B2 /* StatusResponse.swift in Sources */,
@@ -936,6 +996,10 @@
 					"$(PROJECT_DIR)/Frontend/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.teamteam.canopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -969,6 +1033,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frontend/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cisxideas.teamteam.canopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

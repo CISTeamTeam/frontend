@@ -2,8 +2,6 @@
 //  NewPost.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 15/11/2020.
-//
 
 import ImgurAnonymousAPI
 import SwiftUI
@@ -17,7 +15,10 @@ struct NewPost: View {
     @State private var image: UIImage?
     
     /// The post's description
-    @State private var description = ""
+    @State private var description = "Share something about the environment"
+    
+    /// The currently selected challenge, if one is selected
+    @State private var challenge: Challenge?
     
     /// Whether the sign in required alert is currently shown
     @State private var isSignInRequiredAlertPresented = false
@@ -32,7 +33,7 @@ struct NewPost: View {
                 NewPostImage(image: $image)
                 NewPostDescription(text: $description)
                 
-                NewPostChallengePicker()
+                NewPostChallengePicker(challenge: $challenge)
                 
                 Button(action: post) {
                     Label(Constants.post, systemImage: "tray.and.arrow.up.fill")

@@ -2,8 +2,6 @@
 //  Base.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 15/11/2020.
-//
 
 import SwiftUI
 
@@ -12,7 +10,7 @@ struct Base: View {
     /// The main tab bar
     var body: some View {
         TabView {
-            FeedTab(postIDs: Placeholders.posts.map(\.id))
+            FeedTab()
                 .tabItem {
                     Image(systemName: "leaf.fill")
                     Text("For You")
@@ -21,6 +19,10 @@ struct Base: View {
                 .tabItem {
                     Image(systemName: "lightbulb.fill")
                     Text(Constants.challenges)
+                }
+            NewPost()
+                .tabItem {
+                    Image(systemName: "plus")
                 }
             DiscountsTab()
                 .tabItem {
@@ -31,10 +33,6 @@ struct Base: View {
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
-                }
-            NewPost()
-                .tabItem {
-                    Image(systemName: "plus")
                 }
         }
     }

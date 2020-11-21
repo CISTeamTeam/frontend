@@ -2,8 +2,6 @@
 //  Discounts.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import SwiftUI
 
@@ -24,8 +22,11 @@ struct Discounts: View, Loadable {
     func body(with user: User) -> some View {
         ScrollView {
             PointsHeader(user: user)
+                .defaultPadding()
             DiscountGrid(userID: userID)
+                .defaultPadding()
         }
+        .navigationTitle(Constants.discounts)
     }
 }
 

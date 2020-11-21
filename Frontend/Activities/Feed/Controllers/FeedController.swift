@@ -2,8 +2,6 @@
 //  FeedController.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import Combine
 import Foundation
@@ -34,7 +32,6 @@ class FeedController: ObservableObject, ThrowsErrors {
     /// Whether the controller is currently loading a page
     private var isLoadingPage = false
     
-    
     /// Loads the next page
     func loadMore() {
         guard !isLoadingPage else { return }
@@ -43,14 +40,16 @@ class FeedController: ObservableObject, ThrowsErrors {
         let url = Constants.baseURL.appendingPathComponent(endpoint)
         let feedPageRequest = FeedPageRequest(hash: currentPage?.hash)
         let request = URLRequest.postRequest(url: url, body: feedPageRequest)
+        print("->", request.url!.lastPathComponent, String(data: request.httpBody!, encoding: .utf8)!)
         
         URLSession.shared
             .dataTaskPublisher(for: request)
-            .retry(1)
+            .retryIfNeeded()
             .map {
-                $0.data
+                print("<-", request.url!.lastPathComponent, String(data: $0, encoding: .utf8)!)
+                return $0
             }
-            .decode(type: FeedPage.self, decoder: JSONDecoder())
+            .decode(type: FeedPage.self, decoder: JSONDecoder.default)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 self?.catchCompletionError(completion)

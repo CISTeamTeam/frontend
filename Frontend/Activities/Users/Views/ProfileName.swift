@@ -2,14 +2,15 @@
 //  ProfileName.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import SwiftUI
 
+/// A view that shows a user's name
 struct ProfileName: View {
+    /// The user
     let user: User
     
+    /// The contents of the view
     var body: some View {
         Text(user.name)
             .font(.title)

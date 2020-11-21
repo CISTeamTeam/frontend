@@ -2,17 +2,16 @@
 //  AuthController.swift
 //  Frontend
 //
-//  Created by Julian Schiavo on 18/11/2020.
-//
 
 import AuthenticationServices
 import Combine
+import GoogleSignIn
 import SCSDKLoginKit
 import SwiftUI
 import UIKit
 
 /// A controller that handles authentication
-class AuthController: ObservableObject, ThrowsErrors {
+class AuthController: NSObject, ObservableObject, ThrowsErrors, GIDSignInDelegate {
     
     /// Whether authentication is in progress
     @Published var isLoading = false
@@ -45,12 +44,8 @@ class AuthController: ObservableObject, ThrowsErrors {
         let request = createAuthRequest(id: id)
         URLSession.shared
             .dataTaskPublisher(for: request)
-            .retry(1)
-            .map {
-                print(String(data: $0.data, encoding: .utf8)!)
-                return $0.data
-            }
-            .decode(type: StatusResponse.self, decoder: JSONDecoder())
+            .retryIfNeeded()
+            .decode(type: StatusResponse.self, decoder: JSONDecoder.default)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 self?.catchCompletionError(completion)
@@ -90,12 +85,8 @@ class AuthController: ObservableObject, ThrowsErrors {
         
         URLSession.shared
             .dataTaskPublisher(for: request)
-            .retry(1)
-            .map {
-                print(String(data: $0.data, encoding: .utf8)!)
-                return $0.data
-            }
-            .decode(type: StatusResponse.self, decoder: JSONDecoder())
+            .retryIfNeeded()
+            .decode(type: StatusResponse.self, decoder: JSONDecoder.default)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 self?.catchCompletionError(completion)
@@ -121,46 +112,35 @@ class AuthController: ObservableObject, ThrowsErrors {
         return URLRequest.postRequest(url: url, body: user)
     }
     
-    // MARK: - Apple
+    // MARK: - Google
     
-    /// Starts authenticating with Apple
-    /// - Parameter request: A SIWA request
-    func startWithApple(request: ASAuthorizationAppleIDRequest) {
-        setIsLoading(true)
-        request.requestedScopes = [.fullName, .email]
+    /// Starts authenticating with Google
+    func startWithGoogle() {
+        GIDSignIn.sharedInstance()?.presentingViewController = presentingViewController
+        GIDSignIn.sharedInstance()?.signIn()
     }
     
-    /// Called when Sign in with Apple completes successfully
-    /// - Parameter authorization: An auth authorization containing a credential
-    func appleAuthCompleted(with authorization: ASAuthorization) {
-        guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential else {
-            // catch error
+    /// Handle Google Sign In Callback
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error, (error as NSError).code == GIDSignInErrorCode.canceled.rawValue { return }
+        
+        guard let user = user else {
             return
         }
         
-        let id = credential.user
-        
-        var displayName: String?
-        if let nameComponents = credential.fullName {
-            let nameFormatter = PersonNameComponentsFormatter()
-            displayName = nameFormatter.string(from: nameComponents)
+        guard let id = user.userID else {
+            catchError(Errors.unknown)
+            return
         }
         
         authenticate(id: id) { [self] in
-            guard let name = displayName else {
-                // catch error
+            guard let name = user.profile.givenName else {
+                catchError(Errors.unknown)
                 return
             }
             let username = name.alphanumeric
             signUp(id: id, username: username, name: name, profilePictureURL: nil)
         }
-    }
-    
-    /// Called when Sign in with Apple fails
-    /// - Parameter error: The error that occurred
-    func appleAuthFailed(with error: Error) {
-        setIsLoading(false)
-        catchError(error)
     }
     
     // MARK: - Snapchat
@@ -238,7 +218,9 @@ class AuthController: ObservableObject, ThrowsErrors {
     
     // MARK: - Singleton
     
-    private init() { }
+    private override init() {
+        super.init()
+    }
     
     static let shared = AuthController()
 }
