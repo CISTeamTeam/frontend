@@ -26,7 +26,7 @@ class PostPoster: Poster {
     private let endpoint = "createPost"
     
     /// An image uploader
-    private let imageUploader = ImgurUploader(clientID: Constants.imgurClientID)
+    private let imageUploader = ImgurUploader(clientID: Keys.imgurClientID)
     
     init() { }
     
