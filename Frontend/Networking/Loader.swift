@@ -49,20 +49,24 @@ extension Loader {
         guard !loadPlaceholderIfAvailable(for: key) else { return }
         
         let request = createRequest(for: key)
-        print("->", request.url!.lastPathComponent, String(data: request.httpBody!, encoding: .utf8)!)
+        print("--->", request.url!.lastPathComponent, String(data: request.httpBody!, encoding: .utf8)!)
         
         cancellable = URLSession.shared
             .dataTaskPublisher(for: request)
             .retryIfNeeded()
             .map {
-                print("<-", request.url!.lastPathComponent, String(data: $0, encoding: .utf8)!)
+                print("<---", request.url!.lastPathComponent, String(data: $0, encoding: .utf8)!)
                 return $0
             }
             .decode(type: Object.self, decoder: JSONDecoder.default)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 if Object.self == User.self, case .failure = completion {
-                    UserDefaults.standard.set(nil, forKey: Constants.signedInUserIDKey)
+//                    UserDefaults.standard.set(nil, forKey: Constants.signedInUserIDKey)
+                    return
+                }
+                if case let .failure(error) = completion {
+                    print("<--X", request.url!.lastPathComponent, error)
                 }
                 self?.catchCompletionError(completion)
             } receiveValue: { [weak self] object in

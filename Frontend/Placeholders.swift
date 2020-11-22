@@ -42,56 +42,56 @@ enum Placeholders {
     static var comments = Set<Comment>([
         Comment(
             id: "f6d04991-deb7-4e43-8741-b86140774513",
-            authorID: "e2c61608-1d45-4eff-a052-23d688e30c8b",
+            userID: "e2c61608-1d45-4eff-a052-23d688e30c8b",
             postID: "61bede89-8de3-42d4-9cc8-351f57ded067",
             text: "Wow great post",
             creationDate: .init(timeIntervalSinceNow: -500)
         ),
         Comment(
             id: "7a3af137-50a3-40f5-aeb9-4eceb16f4998",
-            authorID: "c28e6c3e-d720-482b-8062-ebb82798c600",
+            userID: "c28e6c3e-d720-482b-8062-ebb82798c600",
             postID: "f5cc5eb5-8049-47c6-89f8-2522878c8d21",
             text: "This post is great!",
             creationDate: .init(timeIntervalSinceNow: -500)
         ),
         Comment(
             id: "98e2318e-fa6e-457c-99da-ce8a5d9f470e",
-            authorID: "8caff95c-1112-4e85-914f-a9b94d3d267b",
+            userID: "8caff95c-1112-4e85-914f-a9b94d3d267b",
             postID: "a1fd730e-0b87-451a-8163-602050920f42",
             text: "WOW!!!",
             creationDate: .init(timeIntervalSinceNow: -500)
         ),
         Comment(
             id: "168fc86d-8bce-41dc-89b6-f21f0434a02e",
-            authorID: "e2c61608-1d45-4eff-a052-23d688e30c8b",
+            userID: "e2c61608-1d45-4eff-a052-23d688e30c8b",
             postID: "ccf509b2-b26a-4f75-bddc-9e7946e33ae1",
             text: "Great!",
             creationDate: .init(timeIntervalSinceNow: -500)
         ),
         Comment(
             id: "f6d04991-deb7-4e43-8741-b86140774513",
-            authorID: "46d4b4e5-afed-42eb-87df-0208f0fbb113",
+            userID: "46d4b4e5-afed-42eb-87df-0208f0fbb113",
             postID: "61bede89-8de3-42d4-9cc8-351f57ded067",
             text: "This is so insightful thanks!",
             creationDate: .init(timeIntervalSinceNow: -500)
         ),
         Comment(
             id: "7a3af137-50a3-40f5-aeb9-4eceb16f4998",
-            authorID: "46d4b4e5-afed-42eb-87df-0208f0fbb113",
+            userID: "46d4b4e5-afed-42eb-87df-0208f0fbb113",
             postID: "f5cc5eb5-8049-47c6-89f8-2522878c8d21",
             text: "You are the coolest",
             creationDate: .init(timeIntervalSinceNow: -500)
         ),
         Comment(
             id: "98e2318e-fa6e-457c-99da-ce8a5d9f470e",
-            authorID: "88a57326-3fd8-4adf-ae66-5e24a3561b44",
+            userID: "88a57326-3fd8-4adf-ae66-5e24a3561b44",
             postID: "a1fd730e-0b87-451a-8163-602050920f42",
             text: "That's epic bro",
             creationDate: .init(timeIntervalSinceNow: -500)
         ),
         Comment(
             id: "168fc86d-8bce-41dc-89b6-f21f0434a02e",
-            authorID: "88a57326-3fd8-4adf-ae66-5e24a3561b44",
+            userID: "88a57326-3fd8-4adf-ae66-5e24a3561b44",
             postID: "ccf509b2-b26a-4f75-bddc-9e7946e33ae1",
             text: "This is the kind of content I've been looking for",
             creationDate: .init(timeIntervalSinceNow: -500)

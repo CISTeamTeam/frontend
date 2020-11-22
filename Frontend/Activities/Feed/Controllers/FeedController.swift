@@ -40,13 +40,13 @@ class FeedController: ObservableObject, ThrowsErrors {
         let url = Constants.baseURL.appendingPathComponent(endpoint)
         let feedPageRequest = FeedPageRequest(hash: currentPage?.hash)
         let request = URLRequest.postRequest(url: url, body: feedPageRequest)
-        print("->", request.url!.lastPathComponent, String(data: request.httpBody!, encoding: .utf8)!)
+        print("--->", request.url!.lastPathComponent, String(data: request.httpBody!, encoding: .utf8)!)
         
         URLSession.shared
             .dataTaskPublisher(for: request)
             .retryIfNeeded()
             .map {
-                print("<-", request.url!.lastPathComponent, String(data: $0, encoding: .utf8)!)
+                print("<---", request.url!.lastPathComponent, String(data: $0, encoding: .utf8)!)
                 return $0
             }
             .decode(type: FeedPage.self, decoder: JSONDecoder.default)
@@ -55,6 +55,7 @@ class FeedController: ObservableObject, ThrowsErrors {
                 self?.catchCompletionError(completion)
             } receiveValue: { [weak self] newPage in
                 self?.currentPage = newPage
+                self?.loadMore()
             }
             .store(in: &cancellables)
     }

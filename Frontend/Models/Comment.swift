@@ -13,7 +13,7 @@ struct Comment: Codable, Hashable, Identifiable {
     let id: ID
     
     /// The ID of the user who posted the comment
-    let authorID: ID
+    let userID: ID
     
     /// The ID of the post on which the comment was made
     let postID: ID

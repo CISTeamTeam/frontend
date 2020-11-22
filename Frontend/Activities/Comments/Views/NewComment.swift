@@ -28,9 +28,11 @@ struct NewComment: View {
             Divider()
             TextField(Constants.postCommentPlaceholder, text: $text)
                 .textFieldStyle(RoundedBorderTextFieldStyle()).disabled(true)
-            Button(Constants.post, action: post)
-                .alignedHorizontally(to: .trailing)
-                .padding(4)
+            Button(action: post) {
+                Label(Constants.post, systemImage: "arrowshape.turn.up.right.fill")
+            }
+            .alignedHorizontally(to: .trailing)
+            .padding(4)
         }
         .alert(errorBinding: $poster.error)
         .alert(isPresented: $isSignInRequiredAlertPresented) {
@@ -45,7 +47,7 @@ struct NewComment: View {
             isSignInRequiredAlertPresented.toggle()
             return
         }
-        let comment = Comment(id: UUID().uuidString, authorID: userID, postID: postID, text: text)
+        let comment = Comment(id: UUID().uuidString, userID: userID, postID: postID, text: text)
         poster.post(comment)
         text = ""
     }

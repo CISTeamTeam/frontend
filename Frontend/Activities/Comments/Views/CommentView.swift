@@ -21,7 +21,7 @@ struct CommentView: View, Loadable {
     /// - Returns: The contents of the view
     func body(with comment: Comment) -> some View {
         HStack(alignment: .top) {
-            UserProfilePicture(userID: comment.authorID)
+            UserProfilePicture(userID: comment.userID)
                 .frame(width: 35)
             CommentInfo(comment: comment)
                 .padding(.top, 3)

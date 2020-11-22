@@ -13,10 +13,9 @@ extension URLSession.DataTaskPublisher {
         self
             .tryMap { data, response -> Data in
                 if isError(data: data) {
-                    print("FATALERROR IND")
+                    Swift.print("---X", request.url!.lastPathComponent, String(data: data, encoding: .utf8)!, response)
                     throw Errors.unknown
                 }
-                print("FATALERROR NOT")
                 return data
             }
             .retry(3)

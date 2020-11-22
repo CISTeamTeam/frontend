@@ -27,10 +27,17 @@ extension Poster {
     /// - Parameter content: The content to post
     func post(_ content: Content) {
         isLoading = true
+        
         let request = createRequest(for: content)
+        print("--->", request.url!.lastPathComponent, String(data: request.httpBody!, encoding: .utf8)!)
+        
         cancellable = URLSession.shared
             .dataTaskPublisher(for: request)
             .retryIfNeeded()
+            .map {
+                print("<---", request.url!.lastPathComponent, String(data: $0, encoding: .utf8)!)
+                return $0
+            }
             .decode(type: StatusResponse.self, decoder: JSONDecoder.default)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in

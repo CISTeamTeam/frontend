@@ -13,7 +13,7 @@ struct CommentInfo: View {
     /// The contents of the view
     var body: some View {
         VStack(spacing: 4) {
-            UserUsernameLabel(userID: comment.authorID)
+            UserUsernameLabel(userID: comment.userID)
                 .alignedHorizontally(to: .leading)
             Text(comment.text)
                 .font(.callout)
