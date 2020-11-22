@@ -4,6 +4,7 @@ This is the repository for the code for the Canopy Frontend App.
 *Please contact us through Edwin Lagos if you have issues running the frontend or backend.*
 
 *During judging, we are running the server on our computer. If the app does not work, please run the backend server yourself and change the server URL in `Constants.swift` to use your local server.*
+*`static let baseURL = URL(string: "http://localhost:8000")!`*
 
 ## Testing
 It is not possible to download the app directly on your phone as the App Store review process would have taken too long.
