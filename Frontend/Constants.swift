@@ -8,7 +8,7 @@ import Foundation
 /// Constants for the app
 enum Constants {
     /// The base URL for the server
-    static let baseURL = URL(string: "http://1.64.231.151:8000")!
+    static let baseURL = URL(string: "http://fatbu.dynu.net:8000")!
     
     /// App Name
     static let appName = "Canopy"
